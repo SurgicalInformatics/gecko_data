@@ -25,10 +25,6 @@ labels_keep = extract_variable_label(patient_data_orig)
 ```{r}
 patient_data = patient_data_orig %>% 
   select(-redcap_data_access_group) %>% 
-  # remove REDCAP internal varnames that are between {op_code}, etc (matrix variables only):
-  mutate(across(where(is_character), ~str_remove_all(., " \\s*\\{[^\\)]+\\}"))) %>% 
-  # remove HTML tags:
-  mutate(across(where(is_character), ~str_remove_all(., "<b>|</b>"))) %>% 
   mutate(ALL = factor("ALL"), .after = 1) %>% 
   mutate(
     # age ----
@@ -103,7 +99,8 @@ patient_data = patient_data_orig %>%
       str_replace("Total Intravenous Volatile Anaesthetic \\(TIVA\\)", "TIVA") %>% 
       str_remove(" \\(e.g., midazolam\\)") %>% 
       fct_explicit_na("Missing") %>% 
-      fct_lump(8, other_level = "Other")
+      fct_lump(8, other_level = "Other") %>% 
+      ff_label("Anaesthetic")
     # end ----
   ) %>% 
   ff_relabel(labels_keep)
@@ -111,7 +108,15 @@ patient_data = patient_data_orig %>%
 
 ```
 
-# Select variables for Shiny app
+# Make NAs explicit
+
+```{r}
+patient_data = patient_data %>% 
+  mutate(across(where(is.factor), ~fct_explicit_na(., "Missing")))
+```
+
+
+# Select variables for Shiny app, reorder for dropdown menu
 
 
 ```{r}
@@ -123,13 +128,20 @@ appdata = patient_data %>%
          -pt_comorbid,
          -pre_img_finding,
          -pre_img_finding_cbd,
-         -op_anaes)
+         -op_anaes) %>% 
+  relocate(age.groups, .after = period) %>% 
+  relocate(gender, .after = age.groups) %>%
+  relocate(admission_prior.groups, .after = frailty) %>%
+  relocate(starts_with("op_"), .after = hist_ac) %>% 
+  relocate(all_of(c("pre_symp_adm_day.groups",
+                    "pre_diag_dec_day.groups",
+                    "pre_dec_op_day.groups")), .after = hist_ac)
 
-# allvars = appdata %>%
-#   select(-contains("_day")) %>% 
-#   finalfit::extract_labels() %>%
-#   select(vname, vfill) %$%
-#   setNames(as.list(vname), vfill)
+
+ # allvars = appdata %>%
+ #  finalfit::extract_labels() %>%
+ #  select(vname, vfill) %$%
+ #  setNames(as.list(vname), vfill)
 
 updated_date = format(Sys.time(), format = "%d-%B %Y")
 ```
