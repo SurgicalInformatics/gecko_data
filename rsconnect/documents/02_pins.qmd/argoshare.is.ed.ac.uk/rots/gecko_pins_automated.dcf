@@ -1,0 +1,15 @@
+name: gecko_pins_automated
+title: gecko_pins_automated
+username: rots
+account: rots
+server: argoshare.is.ed.ac.uk
+hostUrl: https://argoshare.is.ed.ac.uk/__api__
+appId: 644
+bundleId: 3286
+url: https://argoshare.is.ed.ac.uk/content/ca9090bd-672d-40be-a1f7-cfd9b722c982/
+when: 1695029653.06936
+lastSyncTime: 1695029653.06937
+quarto_version: 1.4.288
+quarto_engines: knitr
+asMultiple: FALSE
+asStatic: FALSE
