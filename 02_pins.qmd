@@ -14,11 +14,32 @@ execute:
 ```{r}
 library(tidyverse)
 library(pins)
+library(finalfit)
 source("01_pull.R")
-# load("patient_data_orig.rda")
+#load("patient_data_orig.rda")
 
 labels_keep = extract_variable_label(patient_data_orig)
 ```
+
+# Join with World Bank classifications
+
+```{r}
+wb = read_csv("world_bank_classifications2024.csv", na = "") %>% 
+  mutate(wb = fct_relevel(wb, "High income", "Upper middle income", "Lower middle income")) %>% 
+  select(iso2, wb)
+
+n_records0 = n_distinct(patient_data_orig$record_id)
+
+patient_data_orig = patient_data_orig %>% 
+  mutate(iso2 = toupper(str_sub(redcap_data_access_group, 1, 2))) %>% 
+  left_join(wb) %>% 
+  mutate(wb = ff_label(wb, "WB income level"))
+
+n_records1 = n_distinct(patient_data_orig$record_id)
+stopifnot(n_records0 == n_records1)
+stopifnot(nrow(drop_na(wb)) == nrow(wb))
+```
+
 
 # Clean data
 
@@ -128,8 +149,10 @@ appdata = patient_data %>%
          -pt_comorbid,
          -pre_img_finding,
          -pre_img_finding_cbd,
-         -op_anaes) %>% 
-  relocate(age.groups, .after = period) %>% 
+         -op_anaes,
+         -iso2) %>% 
+  relocate(wb, .after = period) %>% 
+  relocate(age.groups, .after = wb) %>% 
   relocate(gender, .after = age.groups) %>%
   relocate(admission_prior.groups, .after = frailty) %>%
   relocate(starts_with("op_"), .after = hist_ac) %>% 
