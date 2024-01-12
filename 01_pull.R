@@ -17,7 +17,7 @@ patient_data_orig <- list("token"=Sys.getenv("gecko_data_collection_token"),
   httr::content(guess_max = Inf)
 
 data = patient_data_orig
-source("GECKODataCollection-ArgonautDataPullRiin_R_2023-09-11_0813.r")
+source("GECKODataCollection-ArgonautDataPullRiin_R_2024-01-12_1324.r")
 patient_data_orig = data
 #save(patient_data_orig, file = "patient_data_orig.rda")
 rm(data)

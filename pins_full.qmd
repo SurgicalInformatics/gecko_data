@@ -1,0 +1,52 @@
+---
+title: "Gecko FULL datatset into pins"
+format: 
+  html:
+    page-layout: full
+    fontsize: smaller
+editor: visual
+execute:
+  warning: false
+---
+
+# Pull data
+
+```{r}
+library(tidyverse)
+library(pins)
+library(finalfit)
+source("01_pull.R")
+#save(patient_data_orig, file = "patient_data_orig.rda")
+#load("patient_data_orig.rda")
+labels_keep = extract_variable_label(patient_data_orig)
+source("02_join_world_bank.R")
+source("03_cut_collapse.R")
+source("04_cleaning.R")
+```
+
+# Make NAs explicit
+
+```{r}
+patient_data = patient_data %>% 
+  mutate(across(where(is.factor), ~fct_explicit_na(., "Missing")))
+
+
+updated_date = format(Sys.time(), format = "%d-%B %Y")
+```
+
+# Write pin
+
+```{r}
+board = board_connect()
+board %>% pin_write(patient_data, name = "gecko_patient_data")
+
+```
+
+# Usage
+
+```{r, eval = FALSE}
+library(pins)
+board = board_connect()
+patient_data = pin_read(board, "rots/gecko_patient_data")
+date_updated = pin_meta(board, "rots/gecko_patient_data")$created
+```
