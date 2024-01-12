@@ -1,13 +1,12 @@
 library(tidyverse)
 
-
 patient_data_orig <- list("token"=Sys.getenv("gecko_data_collection_token"),
                           content='report',
                           action='export',
                           format='csv',
                           type='flat',
                           csvDelimiter='',
-                          report_id= 507,
+                          report_id= 534,
                           rawOrLabel='label',
                           rawOrLabelHeaders='raw',
                           exportCheckboxLabel='false',
