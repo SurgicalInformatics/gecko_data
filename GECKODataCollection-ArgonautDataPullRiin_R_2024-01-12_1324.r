@@ -203,157 +203,157 @@ levels(data$include_or_exclude_record_complete.factor)=c("Incomplete","Unverifie
 
 #Setting Labels
 
-label(data$record_id)="Record ID"
-label(data$redcap_data_access_group)="Data Access Group"
-label(data$time_entered)="Time"
-label(data$user_start)="User started the form"
-label(data$intro_text)="IMPORTANT NOTE BEFORE ENTERING DATAPlease only enter data if you have local approval/ethics in place, if you have requested ethics and this is in process, please store data locally and only enter it to REDCap once ethics has been approved. Please tick to confirm that your institution agrees to be bound by the terms and conditions of the Data Contributor Agreement, available here"
-label(data$period)="Data collection period"
-label(data$age_years)="Age"
-label(data$gender)="Sex at birth"
-label(data$asa)="ASA grade (ASA grade descriptions found here)"
-label(data$bmi)="Body Mass Index (BMI)"
-label(data$frailty)="Clinical Frailty Scale"
-label(data$pt_comorbid)="Comorbidities Tick all that apply"
-label(data$pt_comorbid_dm)="Diabetes"
-label(data$pt_comorbid_tumour)="Solid Tumour"
-label(data$pt_comorbid_liver)="Liver disease"
-label(data$pt_comorbid_ckd)="Chronic Kidney Disease"
-label(data$hist_ac)="History of acute cholecystitis or cholangitis"
-label(data$admission_prior)="Number of admissions 12 months"
-label(data$pre_img_us)="Ultrasound scan (USS)"
-label(data$pre_img_ct)="Computed Tomography (CT)"
-label(data$pre_img_mrcp)="Magnetic Resonance Cholangiopancreatography (MRCP)"
-label(data$pre_img_ercp)="Endoscopic Retrograde Cholangiopancreatography (ERCP)"
-label(data$pre_img_eus)="Endoscopic Ultrasound (EUS)"
-label(data$pre_img_hida)="Hepatobiliary IminoDiacetic Acid (HIDA)"
-label(data$pre_img_finding)="Preoperative imaging findings"
-label(data$pre_img_finding_cbd)="Dilated CBD diameter"
-label(data$pre_symp_adm_day)="Days between first biliary symptom onset and diagnosis"
-label(data$pre_symp_adm_months)="months symptom to diagnosis"
-label(data$pre_diag_dec_day)="Days between diagnosis and decision to operate"
-label(data$pre_diag_dec_months)="months diagnosis to decision to operate"
-label(data$pre_dec_op_day)="Days between decision to operate and surgery performed"
-label(data$pre_dec_op_months)="months decision to operate to surgery"
-label(data$pre_urgency)="Urgency of surgery"
-label(data$pre_urgency_ele_list)="Elective waiting list"
-label(data$pre_indication)="Indication of surgery"
-label(data$pre_indication_tg)="Tokyo grade"
-label(data$pre_indication_tg_doc)="Was the Tokyo grade documented in patient notes?"
-label(data$pre_indication_atlanta)="Atlanta criteria"
-label(data$pre_indication_atlanta_doc)="Was the Atlanta criteria documented in patient notes?"
-label(data$missing_total_pre)="Total number of missing key data fields in the pre-operative form"
-label(data$preop_data_fields_complete)="Complete?"
-label(data$op_anaes)="Mode of anaesthesia"
-label(data$op_anaes_local)="Local anaesthesia"
-label(data$op_anaes_regional)="Regional anaesthesia"
-label(data$op_anaes_inhaled)="General inhaled anaesthesia"
-label(data$op_abx_yn)="Intraoperative antibiotics"
-label(data$op_abx_indication)="Indication for intraoperative antibiotics"
-label(data$op_operator)="Primary operator"
-label(data$op_operator_n)="Number of cholecystectomies performed by the primary operator prior to this procedure"
-label(data$op_operator_cons)="Consultant specialty"
-label(data$op_operator_cons_other)="Consultant specialty other"
-label(data$op_operator_trainee_op)="Was this a training operation?"
-label(data$op_operator_trainee_cons)="Was a consultant present?"
-label(data$op_approach)="Operative approach"
-label(data$op_approach_mis_type)="Minimally invasive (laparoscopic or robotic) technique"
-label(data$op_approach_open_reason)="Reason for open operative approach"
-label(data$op_approach_conv_reason)="Reason operation is converted to open"
-label(data$op_approach_mis_gas)="Gassless laparoscopic or robotic technique"
-label(data$op_approach_mis_reuse)="Reusable laparoscopic equipment"
-label(data$op_nassar)="Nassar grade"
-label(data$op_cvs_yn)="Critical View of Safety (CVS)"
-label(data$op_cvs_elements)="Elements of the Critical View of Safety (CVS) achieved"
-label(data$op_cvs_to)="Was there a time-out to verify CVS"
-label(data$op_performed)="Operation performed"
-label(data$op_performed_tcs)="Total cholecystectomy technique"
-label(data$op_performed_stc)="Subtotal cholecystectomy technique"
-label(data$op_performed_no)="Operation not performed"
-label(data$op_drain_yn)="Abdominal drain insertion"
-label(data$op_biliary_var)="Anatomical Biliary variant"
-label(data$op_img)="Intraoperative CBD Assessment"
-label(data$op_img_desc)="Decision for intraoperative CBD Assessment"
-label(data$op_img_desc_select)="Reason for selective decision of intraoperative CBD Assessment"
-label(data$op_img_stone_yn)="Intraoperative CBD assessment findings"
-label(data$op_img_stone_mx)="Intraoperative CBD stone management"
-label(data$op_cbd_explore)="Common Bile Duct exploration"
-label(data$op_cbd_explore_close)="Choledochotomy closure"
-label(data$op_contam)="Operative contamination"
-label(data$op_comp)="Intraoperative complications"
-label(data$op_reuse_gown)="Reusable gowns"
-label(data$op_reuse_gown_usage)="Reusable gowns usage"
-label(data$op_reuse_drape)="Reusable drapes"
-label(data$missing_total_intraop)="Total number of missing key data fields in the intraoperative form"
-label(data$intraop_data_fields_complete)="Complete?"
-label(data$postop30_cd)="30-day Clavien Dindo Complication Grade"
-label(data$postop30_cd_drain)="Radiological drainage"
-label(data$postop30_cd_reop)="Re-operation"
-label(data$op_cd_death)="Time from index cholecystectomy to death"
-label(data$postop30_cc_yn)="Unplanned critical care admission"
-label(data$post30_cc_los)="Critical care length of stay"
-label(data$postop30_reimg)="Unplanned re-imaging"
-label(data$postop30_reimg_type)="Re-imaging type"
-label(data$postop30_comp_ssi)="Surgical site infection"
-label(data$postop30_comp_ppc)="Postoperative pulmonary complications"
-label(data$postop30_comp_leak)="Bile leak"
-label(data$postop30_comp_bleed)="Bleeding"
-label(data$postop30_comp_collec)="Intra-abdominal collection"
-label(data$postop30_comp_ap)="Acute pancreatitis"
-label(data$post30_los)="Length of stay"
-label(data$postop30_readm)="30-day readmission"
-label(data$postop30_readm_los)="Readmission length of stay"
-label(data$missing_total_postop30)="Total number of missing key data fields in the 30-day outcomes form"
-label(data$day_outcomes_complete)="Complete?"
-label(data$bdi_yn)="Did this patient suffer from a Bile Duct Injury (BDI)?"
-label(data$bdi_pres)="Presentation of BDI"
-label(data$bdi_day)="Days from index cholecystectomy to BDI diagnosis"
-label(data$bdi_strasberg)="Strasberg bile duct injury grade (BDI grading found here)"
-label(data$bdi_concvasc)="Concomitant vascular injury"
-label(data$bdi_concvasc_loc)="Concomitant vascular injury location"
-label(data$bdi_img)="Imaging modality to investigate and confirm BDITick all that apply"
-label(data$bdi_spec)="Discussion with a specialist HPB centre"
-label(data$bdi_spec_day)="Time from injury to referral"
-label(data$bdi_spec_transfer)="Transferred to specialist HPB centre"
-label(data$bdi_mx)="Management of Bile duct injuryTick all that apply"
-label(data$bdi_ercp_day)="Time from index cholecystectomy to ERCP for BDI management "
-label(data$bdi_ercpstent_day)="Time from index cholecystectomy to ERCP and stent for BDI management "
-label(data$bdi_ptc_day)="Time from index cholecystectomy to PTC for BDI management"
-label(data$bdi_washout_day)="Time from index cholecystectomy to washout for BDI management "
-label(data$bdi_repair_day)="Time from index cholecystectomy to surgical repair for BDI management"
-label(data$bdi_repair_spec)="Specialty of surgeon performing BDI repair"
-label(data$bdi_repair_method)="Method of BDI surgical repair"
-label(data$bdi_repair_vasc)="Vascular repair"
-label(data$bdi_repair_comp)="One-year complications post BDI surgical repairTick all that apply"
-label(data$bdi_repair_stric_day)="Time from BDI surgical repair to stricture formation"
-label(data$bdi_repair_chol_day)="Time from BDI surgical repair to cholangitis"
-label(data$bdi_repair_anas_day)="Time from BDI surgical repair to anastomotic leakage"
-label(data$bdi_repair_coll_day)="Time from BDI surgical repair to intra-abdominal abscess or biloma"
-label(data$bdi_repair_reop_day)="Time from BDI surgical repair to re-repair"
-label(data$bdi_data_fields_complete)="Complete?"
-label(data$hist_exam_yn)="Histological specimen sent for examination"
-label(data$hist_ind)="Indication for sending specimen for histological examination"
-label(data$hist_result_day)="Time from index cholecystectomy to histology result"
-label(data$hist_result)="Histology result"
-label(data$hist_staging)="Staging investigations after index cholecystectomyTick all that apply"
-label(data$hist_staging_cttap_day)="Time from histology result to CT thorax abdomen pelvis staging"
-label(data$hist_staging_mri_day)="Time from histology result to MRI liver staging"
-label(data$hist_staging_pet_day)="Time from histology result to PET-CT staging"
-label(data$hist_staging_lap_day)="Time from histology result to laparoscopy staging"
-label(data$hist_tnm_t)="T category"
-label(data$hist_tnm_n)="N category"
-label(data$hist_tnm_m)="M category"
-label(data$hist_mdt)="Discussed at MDT"
-label(data$hist_adjv)="Adjuvant treatmentTick all that apply"
-label(data$hist_rev_surg)="Revisional surgery completed"
-label(data$hist_rev_surg_type)="Revisional surgery typeTick all that apply"
-label(data$hist_rev_surg_type_liv)="Liver resection extent"
-label(data$hist_rev_surg_day)="Time from histology result to revisional surgery"
-label(data$hist_rev_surg_rms)="Resection margin status"
-label(data$hist_rev_surg_li)="Lymphovascular invasion"
-label(data$hist_rev_surg_pi)="Perineural invasion"
-label(data$hist_recur)="Recurrence on imaging at one year"
-label(data$hist_recur_day)="Time from surgery to recurrence"
-label(data$histology_data_fields_complete)="Complete?"
-label(data$inclusion_exclusion)="Should this record be included in the analysis?"
-label(data$include_or_exclude_record_complete)="Complete?"
+data$record_id %<>% ff_label("Record ID")
+data$redcap_data_access_group %<>% ff_label("Data Access Group")
+data$time_entered %<>% ff_label("Time")
+data$user_start %<>% ff_label("User started the form")
+data$intro_text %<>% ff_label("IMPORTANT NOTE")
+data$period %<>% ff_label("Data collection period")
+data$age_years %<>% ff_label("Age")
+data$gender %<>% ff_label("Sex at birth")
+data$asa %<>% ff_label("ASA grade (ASA grade descriptions found here)")
+data$bmi %<>% ff_label("Body Mass Index (BMI)")
+data$frailty %<>% ff_label("Clinical Frailty Scale")
+data$pt_comorbid %<>% ff_label("Comorbidities Tick all that apply")
+data$pt_comorbid_dm %<>% ff_label("Diabetes")
+data$pt_comorbid_tumour %<>% ff_label("Solid Tumour")
+data$pt_comorbid_liver %<>% ff_label("Liver disease")
+data$pt_comorbid_ckd %<>% ff_label("Chronic Kidney Disease")
+data$hist_ac %<>% ff_label("History of acute cholecystitis or cholangitis")
+data$admission_prior %<>% ff_label("Number of admissions 12 months")
+data$pre_img_us %<>% ff_label("Ultrasound scan (USS)")
+data$pre_img_ct %<>% ff_label("Computed Tomography (CT)")
+data$pre_img_mrcp %<>% ff_label("Magnetic Resonance Cholangiopancreatography (MRCP)")
+data$pre_img_ercp %<>% ff_label("Endoscopic Retrograde Cholangiopancreatography (ERCP)")
+data$pre_img_eus %<>% ff_label("Endoscopic Ultrasound (EUS)")
+data$pre_img_hida %<>% ff_label("Hepatobiliary IminoDiacetic Acid (HIDA)")
+data$pre_img_finding %<>% ff_label("Preoperative imaging findings")
+data$pre_img_finding_cbd %<>% ff_label("Dilated CBD diameter")
+data$pre_symp_adm_day %<>% ff_label("Days between first biliary symptom onset and diagnosis")
+data$pre_symp_adm_months %<>% ff_label("months symptom to diagnosis")
+data$pre_diag_dec_day %<>% ff_label("Days between diagnosis and decision to operate")
+data$pre_diag_dec_months %<>% ff_label("months diagnosis to decision to operate")
+data$pre_dec_op_day %<>% ff_label("Days between decision to operate and surgery performed")
+data$pre_dec_op_months %<>% ff_label("months decision to operate to surgery")
+data$pre_urgency %<>% ff_label("Urgency of surgery")
+data$pre_urgency_ele_list %<>% ff_label("Elective waiting list")
+data$pre_indication %<>% ff_label("Indication of surgery")
+data$pre_indication_tg %<>% ff_label("Tokyo grade")
+data$pre_indication_tg_doc %<>% ff_label("Was the Tokyo grade documented in patient notes?")
+data$pre_indication_atlanta %<>% ff_label("Atlanta criteria")
+data$pre_indication_atlanta_doc %<>% ff_label("Was the Atlanta criteria documented in patient notes?")
+data$missing_total_pre %<>% ff_label("Total number of missing key data fields in the pre-operative form")
+data$preop_data_fields_complete %<>% ff_label("Complete?")
+data$op_anaes %<>% ff_label("Mode of anaesthesia")
+data$op_anaes_local %<>% ff_label("Local anaesthesia")
+data$op_anaes_regional %<>% ff_label("Regional anaesthesia")
+data$op_anaes_inhaled %<>% ff_label("General inhaled anaesthesia")
+data$op_abx_yn %<>% ff_label("Intraoperative antibiotics")
+data$op_abx_indication %<>% ff_label("Indication for intraoperative antibiotics")
+data$op_operator %<>% ff_label("Primary operator")
+data$op_operator_n %<>% ff_label("Number of cholecystectomies performed by the primary operator prior to this procedure")
+data$op_operator_cons %<>% ff_label("Consultant specialty")
+data$op_operator_cons_other %<>% ff_label("Consultant specialty other")
+data$op_operator_trainee_op %<>% ff_label("Was this a training operation?")
+data$op_operator_trainee_cons %<>% ff_label("Was a consultant present?")
+data$op_approach %<>% ff_label("Operative approach")
+data$op_approach_mis_type %<>% ff_label("Minimally invasive (laparoscopic or robotic) technique")
+data$op_approach_open_reason %<>% ff_label("Reason for open operative approach")
+data$op_approach_conv_reason %<>% ff_label("Reason operation is converted to open")
+data$op_approach_mis_gas %<>% ff_label("Gassless laparoscopic or robotic technique")
+data$op_approach_mis_reuse %<>% ff_label("Reusable laparoscopic equipment")
+data$op_nassar %<>% ff_label("Nassar grade")
+data$op_cvs_yn %<>% ff_label("Critical View of Safety (CVS)")
+data$op_cvs_elements %<>% ff_label("Elements of the Critical View of Safety (CVS) achieved")
+data$op_cvs_to %<>% ff_label("Was there a time-out to verify CVS")
+data$op_performed %<>% ff_label("Operation performed")
+data$op_performed_tcs %<>% ff_label("Total cholecystectomy technique")
+data$op_performed_stc %<>% ff_label("Subtotal cholecystectomy technique")
+data$op_performed_no %<>% ff_label("Operation not performed")
+data$op_drain_yn %<>% ff_label("Abdominal drain insertion")
+data$op_biliary_var %<>% ff_label("Anatomical Biliary variant")
+data$op_img %<>% ff_label("Intraoperative CBD Assessment")
+data$op_img_desc %<>% ff_label("Decision for intraoperative CBD Assessment")
+data$op_img_desc_select %<>% ff_label("Reason for selective decision of intraoperative CBD Assessment")
+data$op_img_stone_yn %<>% ff_label("Intraoperative CBD assessment findings")
+data$op_img_stone_mx %<>% ff_label("Intraoperative CBD stone management")
+data$op_cbd_explore %<>% ff_label("Common Bile Duct exploration")
+data$op_cbd_explore_close %<>% ff_label("Choledochotomy closure")
+data$op_contam %<>% ff_label("Operative contamination")
+data$op_comp %<>% ff_label("Intraoperative complications")
+data$op_reuse_gown %<>% ff_label("Reusable gowns")
+data$op_reuse_gown_usage %<>% ff_label("Reusable gowns usage")
+data$op_reuse_drape %<>% ff_label("Reusable drapes")
+data$missing_total_intraop %<>% ff_label("Total number of missing key data fields in the intraoperative form")
+data$intraop_data_fields_complete %<>% ff_label("Complete?")
+data$postop30_cd %<>% ff_label("30-day Clavien Dindo Complication Grade")
+data$postop30_cd_drain %<>% ff_label("Radiological drainage")
+data$postop30_cd_reop %<>% ff_label("Re-operation")
+data$op_cd_death %<>% ff_label("Time from index cholecystectomy to death")
+data$postop30_cc_yn %<>% ff_label("Unplanned critical care admission")
+data$post30_cc_los %<>% ff_label("Critical care length of stay")
+data$postop30_reimg %<>% ff_label("Unplanned re-imaging")
+data$postop30_reimg_type %<>% ff_label("Re-imaging type")
+data$postop30_comp_ssi %<>% ff_label("Surgical site infection")
+data$postop30_comp_ppc %<>% ff_label("Postoperative pulmonary complications")
+data$postop30_comp_leak %<>% ff_label("Bile leak")
+data$postop30_comp_bleed %<>% ff_label("Bleeding")
+data$postop30_comp_collec %<>% ff_label("Intra-abdominal collection")
+data$postop30_comp_ap %<>% ff_label("Acute pancreatitis")
+data$post30_los %<>% ff_label("Length of stay")
+data$postop30_readm %<>% ff_label("30-day readmission")
+data$postop30_readm_los %<>% ff_label("Readmission length of stay")
+data$missing_total_postop30 %<>% ff_label("Total number of missing key data fields in the 30-day outcomes form")
+data$day_outcomes_complete %<>% ff_label("Complete?")
+data$bdi_yn %<>% ff_label("Did this patient suffer from a Bile Duct Injury (BDI)?")
+data$bdi_pres %<>% ff_label("Presentation of BDI")
+data$bdi_day %<>% ff_label("Days from index cholecystectomy to BDI diagnosis")
+data$bdi_strasberg %<>% ff_label("Strasberg bile duct injury grade (BDI grading found here)")
+data$bdi_concvasc %<>% ff_label("Concomitant vascular injury")
+data$bdi_concvasc_loc %<>% ff_label("Concomitant vascular injury location")
+data$bdi_img %<>% ff_label("Imaging modality to investigate and confirm BDITick all that apply")
+data$bdi_spec %<>% ff_label("Discussion with a specialist HPB centre")
+data$bdi_spec_day %<>% ff_label("Time from injury to referral")
+data$bdi_spec_transfer %<>% ff_label("Transferred to specialist HPB centre")
+data$bdi_mx %<>% ff_label("Management of Bile duct injuryTick all that apply")
+data$bdi_ercp_day %<>% ff_label("Time from index cholecystectomy to ERCP for BDI management ")
+data$bdi_ercpstent_day %<>% ff_label("Time from index cholecystectomy to ERCP and stent for BDI management ")
+data$bdi_ptc_day %<>% ff_label("Time from index cholecystectomy to PTC for BDI management")
+data$bdi_washout_day %<>% ff_label("Time from index cholecystectomy to washout for BDI management ")
+data$bdi_repair_day %<>% ff_label("Time from index cholecystectomy to surgical repair for BDI management")
+data$bdi_repair_spec %<>% ff_label("Specialty of surgeon performing BDI repair")
+data$bdi_repair_method %<>% ff_label("Method of BDI surgical repair")
+data$bdi_repair_vasc %<>% ff_label("Vascular repair")
+data$bdi_repair_comp %<>% ff_label("One-year complications post BDI surgical repairTick all that apply")
+data$bdi_repair_stric_day %<>% ff_label("Time from BDI surgical repair to stricture formation")
+data$bdi_repair_chol_day %<>% ff_label("Time from BDI surgical repair to cholangitis")
+data$bdi_repair_anas_day %<>% ff_label("Time from BDI surgical repair to anastomotic leakage")
+data$bdi_repair_coll_day %<>% ff_label("Time from BDI surgical repair to intra-abdominal abscess or biloma")
+data$bdi_repair_reop_day %<>% ff_label("Time from BDI surgical repair to re-repair")
+data$bdi_data_fields_complete %<>% ff_label("Complete?")
+data$hist_exam_yn %<>% ff_label("Histological specimen sent for examination")
+data$hist_ind %<>% ff_label("Indication for sending specimen for histological examination")
+data$hist_result_day %<>% ff_label("Time from index cholecystectomy to histology result")
+data$hist_result %<>% ff_label("Histology result")
+data$hist_staging %<>% ff_label("Staging investigations after index cholecystectomyTick all that apply")
+data$hist_staging_cttap_day %<>% ff_label("Time from histology result to CT thorax abdomen pelvis staging")
+data$hist_staging_mri_day %<>% ff_label("Time from histology result to MRI liver staging")
+data$hist_staging_pet_day %<>% ff_label("Time from histology result to PET-CT staging")
+data$hist_staging_lap_day %<>% ff_label("Time from histology result to laparoscopy staging")
+data$hist_tnm_t %<>% ff_label("T category")
+data$hist_tnm_n %<>% ff_label("N category")
+data$hist_tnm_m %<>% ff_label("M category")
+data$hist_mdt %<>% ff_label("Discussed at MDT")
+data$hist_adjv %<>% ff_label("Adjuvant treatmentTick all that apply")
+data$hist_rev_surg %<>% ff_label("Revisional surgery completed")
+data$hist_rev_surg_type %<>% ff_label("Revisional surgery typeTick all that apply")
+data$hist_rev_surg_type_liv %<>% ff_label("Liver resection extent")
+data$hist_rev_surg_day %<>% ff_label("Time from histology result to revisional surgery")
+data$hist_rev_surg_rms %<>% ff_label("Resection margin status")
+data$hist_rev_surg_li %<>% ff_label("Lymphovascular invasion")
+data$hist_rev_surg_pi %<>% ff_label("Perineural invasion")
+data$hist_recur %<>% ff_label("Recurrence on imaging at one year")
+data$hist_recur_day %<>% ff_label("Time from surgery to recurrence")
+data$histology_data_fields_complete %<>% ff_label("Complete?")
+data$inclusion_exclusion %<>% ff_label("Should this record be included in the analysis?")
+data$include_or_exclude_record_complete %<>% ff_label("Complete?")
