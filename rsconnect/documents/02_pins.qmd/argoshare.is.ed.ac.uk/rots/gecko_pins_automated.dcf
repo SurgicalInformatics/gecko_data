@@ -5,10 +5,8 @@ account: rots
 server: argoshare.is.ed.ac.uk
 hostUrl: https://argoshare.is.ed.ac.uk/__api__
 appId: 644
-bundleId: 3306
+bundleId: 3335
 url: https://argoshare.is.ed.ac.uk/content/ca9090bd-672d-40be-a1f7-cfd9b722c982/
-when: 1695113064.29459
-lastSyncTime: 1695113064.2946
 quarto_version: 1.4.288
 quarto_engines: knitr
 asMultiple: FALSE

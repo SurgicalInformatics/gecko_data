@@ -7,3 +7,9 @@
 *csv
 *html
 *_files
+*pdf
+*docx
+data*
+*.rda
+*.rds
+*.csv

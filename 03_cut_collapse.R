@@ -1,49 +1,3 @@
----
-title: "Gecko datatset into pins"
-format: 
-  html:
-    page-layout: full
-    fontsize: smaller
-editor: visual
-execute:
-  warning: false
----
-
-# Pull data
-
-```{r}
-library(tidyverse)
-library(pins)
-library(finalfit)
-source("01_pull.R")
-#load("patient_data_orig.rda")
-
-labels_keep = extract_variable_label(patient_data_orig)
-```
-
-# Join with World Bank classifications
-
-```{r}
-wb = read_csv("world_bank_classifications2024.csv", na = "") %>% 
-  mutate(wb = fct_relevel(wb, "High income", "Upper middle income", "Lower middle income")) %>% 
-  select(iso2, wb)
-
-n_records0 = n_distinct(patient_data_orig$record_id)
-
-patient_data_orig = patient_data_orig %>% 
-  mutate(iso2 = toupper(str_sub(redcap_data_access_group, 1, 2))) %>% 
-  left_join(wb) %>% 
-  mutate(wb = ff_label(wb, "WB income level"))
-
-n_records1 = n_distinct(patient_data_orig$record_id)
-stopifnot(n_records0 == n_records1)
-stopifnot(nrow(drop_na(wb)) == nrow(wb))
-```
-
-
-# Clean data
-
-```{r}
 patient_data = patient_data_orig %>% 
   select(-redcap_data_access_group) %>% 
   mutate(ALL = factor("ALL"), .after = 1) %>% 
@@ -119,76 +73,9 @@ patient_data = patient_data_orig %>%
     op_anaes.grouped = op_anaes %>% 
       str_replace("Total Intravenous Volatile Anaesthetic \\(TIVA\\)", "TIVA") %>% 
       str_remove(" \\(e.g., midazolam\\)") %>% 
-      fct_explicit_na("Missing") %>% 
+      fct_na_value_to_level(level = "Missing") %>% 
       fct_lump(8, other_level = "Other") %>% 
       ff_label("Anaesthetic")
     # end ----
   ) %>% 
   ff_relabel(labels_keep)
-
-
-```
-
-# Make NAs explicit
-
-```{r}
-patient_data = patient_data %>% 
-  mutate(across(where(is.factor), ~fct_explicit_na(., "Missing")))
-```
-
-
-# Select variables for Shiny app, reorder for dropdown menu
-
-
-```{r}
-appdata = patient_data %>%
-  select(-record_id, -age_years, -admission_prior, -post30_los,
-         -pre_symp_adm_day,
-         -pre_diag_dec_day,
-         -pre_dec_op_day,
-         -pt_comorbid,
-         -pre_img_finding,
-         -pre_img_finding_cbd,
-         -op_anaes,
-         -iso2) %>% 
-  relocate(wb, .after = period) %>% 
-  relocate(age.groups, .after = wb) %>% 
-  relocate(gender, .after = age.groups) %>%
-  relocate(admission_prior.groups, .after = frailty) %>%
-  relocate(starts_with("op_"), .after = hist_ac) %>% 
-  relocate(all_of(c("pre_symp_adm_day.groups",
-                    "pre_diag_dec_day.groups",
-                    "pre_dec_op_day.groups")), .after = hist_ac)
-
-
- # allvars = appdata %>%
- #  finalfit::extract_labels() %>%
- #  select(vname, vfill) %$%
- #  setNames(as.list(vname), vfill)
-
-updated_date = format(Sys.time(), format = "%d-%B %Y")
-```
-
-
-
-# Write pin
-
-```{r}
-
-gecko_appdata = appdata
-
-board = board_connect()
-#board %>% pin_write(patient_data)
-board %>% pin_write(gecko_appdata)
-
-```
-
-# Usage
-
-```{r, eval = FALSE}
-library(pins)
-board = board_connect()
-patient_data = pin_read(board, "rots/gecko_appdata")
-date_updated = pin_meta(board, "rots/gecko_appdata")$created
-```
-
