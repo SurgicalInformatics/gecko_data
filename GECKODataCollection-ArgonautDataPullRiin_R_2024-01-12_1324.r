@@ -7,12 +7,6 @@
 library(finalfit)
 library(magrittr)
 
-data = data %>% 
-  # remove subvariable labels (in {var})
-  mutate(across(where(is_character), ~str_remove_all(., " \\s*\\{[^\\)]+\\}"))) %>% 
-  # remove HTML tags
-  mutate(across(where(is_character), ~str_remove_all(., "<b>|</b>")))
-
 data$period= factor(data$period,levels=c("1","2","3","4","5","6","7","8"))
 data$gender= factor(data$gender,levels=c("1","2"))
 data$asa= factor(data$asa,levels=c("1","2","3","4","5","6"))
@@ -212,6 +206,11 @@ levels(data$histology_data_fields_complete)=c("Incomplete","Unverified","Complet
 levels(data$inclusion_exclusion)=c("Include - this is a valid record for a patient who fulfils inclusion criteria","Exclude - patient does not fulfil inclusion criteria","Exclude - duplicate record","Exclude - patient withdrew consent","Exclude - test/practice record or record created by error")
 levels(data$include_or_exclude_record_complete)=c("Incomplete","Unverified","Complete")
 
+data = data %>% 
+  # remove subvariable labels (in {var})
+  mutate(across(where(is_character), ~str_remove_all(., " \\s*\\{[^\\)]+\\}"))) %>% 
+  # remove HTML tags
+  mutate(across(where(is_character), ~str_remove_all(., "<b>|</b>")))
 
 #Setting Labels
 
