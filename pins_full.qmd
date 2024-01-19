@@ -18,27 +18,39 @@ library(finalfit)
 source("01_pull.R")
 #save(patient_data_orig, file = "patient_data_orig.rda")
 #load("patient_data_orig.rda")
-labels_keep = extract_variable_label(patient_data_orig)
+#labels_keep = extract_variable_label(patient_data_orig)
 source("02_join_world_bank.R")
 source("03_cut_collapse.R")
 source("04_cleaning.R")
 ```
 
-# Make NAs explicit
+# Selection of variables and minor modifications for the Shiny app
 
 ```{r}
-patient_data = patient_data %>% 
-  mutate(across(where(is.factor), ~fct_explicit_na(., "Missing")))
+shinyviz_vars = read_lines("shinyviz_varlist.txt")
 
+appdata = patient_data %>% 
+  select(all_of(shinyviz_vars), redcap_data_access_group)
 
-updated_date = format(Sys.time(), format = "%d-%B %Y")
+labels_keep_appdata = extract_variable_label(appdata)
+
+# set missing BDIs to No as we away 1-year results
+appdata = appdata %>% 
+  mutate(bdi_yn = if_else(bdi_yn == "Missing", "No", bdi_yn)) %>% 
+  mutate(across(where(is.factor), ~fct_na_value_to_level(., level = "Missing"))) %>%
+  mutate(ALL = "ALL", .before = period) %>% 
+  ff_relabel(labels_keep_appdata)
+
 ```
 
-# Write pin
+# Write pins
 
 ```{r}
 board = board_connect()
+# for analysis:
 board %>% pin_write(patient_data, name = "gecko_patient_data")
+# for shinyviz:
+board %>% pin_write(appdata, name = "gecko_appdata")
 
 ```
 
@@ -49,4 +61,6 @@ library(pins)
 board = board_connect()
 patient_data = pin_read(board, "rots/gecko_patient_data")
 date_updated = pin_meta(board, "rots/gecko_patient_data")$created
+
+patient_data = pin_read(board, "rots/gecko_appdata")
 ```
