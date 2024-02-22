@@ -30,6 +30,7 @@ source("04_cleaning.R")
 shinyviz_vars = read_lines("shinyviz_varlist.txt")
 
 appdata = patient_data %>% 
+  filter(internal_check == "Pass - included in analysis") %>% 
   select(all_of(shinyviz_vars), redcap_data_access_group)
 
 labels_keep_appdata = extract_variable_label(appdata)

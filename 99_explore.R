@@ -2,7 +2,14 @@ library(tidyverse)
 library(scales)
 theme_set(theme_bw())
 
-load("patient_data_orig.rda")
+library(pins)
+board = board_connect()
+patient_data = pin_read(board, "rots/gecko_patient_data")
 
-patient_data_orig %>% 
-  count(postop30_cd, postop30_comp_ssi)
+patient_data %>% 
+  filter(internal_check != "Pass - included in analysis") %>% 
+  count(gender, internal_check)
+
+patient_data %>% 
+  filter(internal_check != "Pass - included in analysis") %>% 
+  count(redcap_data_access_group, internal_check, sort = TRUE)

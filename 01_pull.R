@@ -18,6 +18,12 @@ patient_data_orig <- list("token"=Sys.getenv("gecko_data_collection_token"),
 
 data = patient_data_orig
 source("GECKODataCollection-ArgonautDataPullRiin_R_2024-01-12_1324.r")
-patient_data_orig = data
+patient_data_orig = data %>% 
+  mutate(internal_check = internal_check %>% 
+           factor() %>% 
+           fct_recode("Pass - included in analysis" = "1",
+                      "Period less than 90% complete" = "2",
+                      "Period missing - excluded from analysis" = "3"))
+
 #save(patient_data_orig, file = "patient_data_orig.rda")
 rm(data)
