@@ -1,5 +1,5 @@
 # REDCap factoring script
-# -  in variable names removed
+# - .factor in variable names removed
 # - ff_label() instead of Hmisc.
 # - leading and trailing spaces in some label names removed
 # - long labels shortened
