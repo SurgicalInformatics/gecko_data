@@ -7,6 +7,7 @@
 library(finalfit)
 library(magrittr)
 
+# Making factors ----
 data$period= factor(data$period,levels=c("1","2","3","4","5","6","7","8"))
 data$gender= factor(data$gender,levels=c("1","2"))
 data$asa= factor(data$asa,levels=c("1","2","3","4","5","6"))
@@ -106,6 +107,105 @@ data$hist_recur= factor(data$hist_recur,levels=c("1","0"))
 data$histology_data_fields_complete= factor(data$histology_data_fields_complete,levels=c("0","1","2"))
 data$inclusion_exclusion= factor(data$inclusion_exclusion,levels=c("1","2","3","4","5"))
 data$include_or_exclude_record_complete= factor(data$include_or_exclude_record_complete,levels=c("0","1","2"))
+
+# making factors: checkbox variables ----
+data$pt_comorbid___1.factor = factor(data$pt_comorbid___1,levels=c("0","1"))
+data$pt_comorbid___2.factor = factor(data$pt_comorbid___2,levels=c("0","1"))
+data$pt_comorbid___3.factor = factor(data$pt_comorbid___3,levels=c("0","1"))
+data$pt_comorbid___4.factor = factor(data$pt_comorbid___4,levels=c("0","1"))
+data$pt_comorbid___5.factor = factor(data$pt_comorbid___5,levels=c("0","1"))
+data$pt_comorbid___6.factor = factor(data$pt_comorbid___6,levels=c("0","1"))
+data$pt_comorbid___7.factor = factor(data$pt_comorbid___7,levels=c("0","1"))
+data$pt_comorbid___8.factor = factor(data$pt_comorbid___8,levels=c("0","1"))
+data$pt_comorbid___9.factor = factor(data$pt_comorbid___9,levels=c("0","1"))
+data$pt_comorbid___10.factor = factor(data$pt_comorbid___10,levels=c("0","1"))
+data$pt_comorbid___11.factor = factor(data$pt_comorbid___11,levels=c("0","1"))
+data$pt_comorbid___12.factor = factor(data$pt_comorbid___12,levels=c("0","1"))
+data$pt_comorbid___13.factor = factor(data$pt_comorbid___13,levels=c("0","1"))
+data$pt_comorbid___14.factor = factor(data$pt_comorbid___14,levels=c("0","1"))
+data$pt_comorbid___15.factor = factor(data$pt_comorbid___15,levels=c("0","1"))
+data$pt_comorbid___16.factor = factor(data$pt_comorbid___16,levels=c("0","1"))
+data$pt_comorbid___17.factor = factor(data$pt_comorbid___17,levels=c("0","1"))
+data$pt_comorbid___18.factor = factor(data$pt_comorbid___18,levels=c("0","1"))
+data$pt_comorbid___19.factor = factor(data$pt_comorbid___19,levels=c("0","1"))
+
+data$pre_img_finding___1.factor = factor(data$pre_img_finding___1,levels=c("0","1"))
+data$pre_img_finding___2.factor = factor(data$pre_img_finding___2,levels=c("0","1"))
+data$pre_img_finding___3.factor = factor(data$pre_img_finding___3,levels=c("0","1"))
+data$pre_img_finding___4.factor = factor(data$pre_img_finding___4,levels=c("0","1"))
+data$pre_img_finding___5.factor = factor(data$pre_img_finding___5,levels=c("0","1"))
+data$pre_img_finding___6.factor = factor(data$pre_img_finding___6,levels=c("0","1"))
+
+data$op_anaes___1.factor = factor(data$op_anaes___1,levels=c("0","1"))
+data$op_anaes___2.factor = factor(data$op_anaes___2,levels=c("0","1"))
+data$op_anaes___3.factor = factor(data$op_anaes___3,levels=c("0","1"))
+data$op_anaes___4.factor = factor(data$op_anaes___4,levels=c("0","1"))
+data$op_anaes___5.factor = factor(data$op_anaes___5,levels=c("0","1"))
+
+data$op_anaes_local___1.factor = factor(data$op_anaes_local___1,levels=c("0","1"))
+data$op_anaes_local___2.factor = factor(data$op_anaes_local___2,levels=c("0","1"))
+
+data$op_cvs_elements___1.factor = factor(data$op_cvs_elements___1,levels=c("0","1"))
+data$op_cvs_elements___2.factor = factor(data$op_cvs_elements___2,levels=c("0","1"))
+data$op_cvs_elements___3.factor = factor(data$op_cvs_elements___3,levels=c("0","1"))
+data$op_cvs_elements___4.factor = factor(data$op_cvs_elements___4,levels=c("0","1"))
+
+data$op_img___1.factor = factor(data$op_img___1,levels=c("0","1"))
+data$op_img___2.factor = factor(data$op_img___2,levels=c("0","1"))
+data$op_img___3.factor = factor(data$op_img___3,levels=c("0","1"))
+data$op_img___4.factor = factor(data$op_img___4,levels=c("0","1"))
+data$op_img___5.factor = factor(data$op_img___5,levels=c("0","1"))
+
+data$op_comp___1.factor = factor(data$op_comp___1,levels=c("0","1"))
+data$op_comp___2.factor = factor(data$op_comp___2,levels=c("0","1"))
+data$op_comp___3.factor = factor(data$op_comp___3,levels=c("0","1"))
+data$op_comp___4.factor = factor(data$op_comp___4,levels=c("0","1"))
+data$op_comp___5.factor = factor(data$op_comp___5,levels=c("0","1"))
+data$op_comp___6.factor = factor(data$op_comp___6,levels=c("0","1"))
+
+data$postop30_reimg_type___1.factor = factor(data$postop30_reimg_type___1,levels=c("0","1"))
+data$postop30_reimg_type___2.factor = factor(data$postop30_reimg_type___2,levels=c("0","1"))
+data$postop30_reimg_type___3.factor = factor(data$postop30_reimg_type___3,levels=c("0","1"))
+data$postop30_reimg_type___4.factor = factor(data$postop30_reimg_type___4,levels=c("0","1"))
+
+data$bdi_img___1.factor = factor(data$bdi_img___1,levels=c("0","1"))
+data$bdi_img___2.factor = factor(data$bdi_img___2,levels=c("0","1"))
+data$bdi_img___3.factor = factor(data$bdi_img___3,levels=c("0","1"))
+data$bdi_img___4.factor = factor(data$bdi_img___4,levels=c("0","1"))
+data$bdi_img___5.factor = factor(data$bdi_img___5,levels=c("0","1"))
+data$bdi_img___6.factor = factor(data$bdi_img___6,levels=c("0","1"))
+data$bdi_img___7.factor = factor(data$bdi_img___7,levels=c("0","1"))
+data$bdi_img___8.factor = factor(data$bdi_img___8,levels=c("0","1"))
+data$bdi_img___9.factor = factor(data$bdi_img___9,levels=c("0","1"))
+
+data$bdi_mx___1.factor = factor(data$bdi_mx___1,levels=c("0","1"))
+data$bdi_mx___2.factor = factor(data$bdi_mx___2,levels=c("0","1"))
+data$bdi_mx___3.factor = factor(data$bdi_mx___3,levels=c("0","1"))
+data$bdi_mx___4.factor = factor(data$bdi_mx___4,levels=c("0","1"))
+data$bdi_mx___5.factor = factor(data$bdi_mx___5,levels=c("0","1"))
+
+data$bdi_repair_comp___1.factor = factor(data$bdi_repair_comp___1,levels=c("0","1"))
+data$bdi_repair_comp___2.factor = factor(data$bdi_repair_comp___2,levels=c("0","1"))
+data$bdi_repair_comp___3.factor = factor(data$bdi_repair_comp___3,levels=c("0","1"))
+data$bdi_repair_comp___4.factor = factor(data$bdi_repair_comp___4,levels=c("0","1"))
+data$bdi_repair_comp___5.factor = factor(data$bdi_repair_comp___5,levels=c("0","1"))
+data$bdi_repair_comp___6.factor = factor(data$bdi_repair_comp___6,levels=c("0","1"))
+
+data$hist_staging___1.factor = factor(data$hist_staging___1,levels=c("0","1"))
+data$hist_staging___2.factor = factor(data$hist_staging___2,levels=c("0","1"))
+data$hist_staging___3.factor = factor(data$hist_staging___3,levels=c("0","1"))
+data$hist_staging___4.factor = factor(data$hist_staging___4,levels=c("0","1"))
+
+data$hist_adjv___1.factor = factor(data$hist_adjv___1,levels=c("0","1"))
+data$hist_adjv___2.factor = factor(data$hist_adjv___2,levels=c("0","1"))
+data$hist_adjv___3.factor = factor(data$hist_adjv___3,levels=c("0","1"))
+
+data$hist_rev_surg_type___1.factor = factor(data$hist_rev_surg_type___1,levels=c("0","1"))
+data$hist_rev_surg_type___2.factor = factor(data$hist_rev_surg_type___2,levels=c("0","1"))
+data$hist_rev_surg_type___3.factor = factor(data$hist_rev_surg_type___3,levels=c("0","1"))
+
+
+# Setting levels ----
 levels(data$period)=c("Period 1: 31st Jul - 13th Aug 2023","Period 2: 14th Aug - 27th Aug 2023","Period 3: 28th Aug - 10th Sept 2023","Period 4: 11th Sept - 24th Sept 2023","Period 5: 25th Sept - 8th Oct 2023","Period 6: 9th Oct - 22nd Oct 2023","Period 7: 23rd Oct - 5th Nov 2023","Period 8: 6th Nov - 19th Nov 2023")
 levels(data$gender)=c("Female","Male")
 levels(data$asa)=c("I","II","III","IV","V","Unknown")
@@ -206,13 +306,110 @@ levels(data$histology_data_fields_complete)=c("Incomplete","Unverified","Complet
 levels(data$inclusion_exclusion)=c("Include - this is a valid record for a patient who fulfils inclusion criteria","Exclude - patient does not fulfil inclusion criteria","Exclude - duplicate record","Exclude - patient withdrew consent","Exclude - test/practice record or record created by error")
 levels(data$include_or_exclude_record_complete)=c("Incomplete","Unverified","Complete")
 
+# levels of checkbox variables ----
+levels(data$pt_comorbid___1.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___2.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___3.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___4.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___5.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___6.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___7.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___8.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___9.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___10.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___11.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___12.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___13.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___14.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___15.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___16.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___17.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___18.factor)=c("Unchecked","Checked")
+levels(data$pt_comorbid___19.factor)=c("Unchecked","Checked")
+
+levels(data$pre_img_finding___1.factor)=c("Unchecked","Checked")
+levels(data$pre_img_finding___2.factor)=c("Unchecked","Checked")
+levels(data$pre_img_finding___3.factor)=c("Unchecked","Checked")
+levels(data$pre_img_finding___4.factor)=c("Unchecked","Checked")
+levels(data$pre_img_finding___5.factor)=c("Unchecked","Checked")
+levels(data$pre_img_finding___6.factor)=c("Unchecked","Checked")
+
+levels(data$op_anaes___1.factor)=c("Unchecked","Checked")
+levels(data$op_anaes___2.factor)=c("Unchecked","Checked")
+levels(data$op_anaes___3.factor)=c("Unchecked","Checked")
+levels(data$op_anaes___4.factor)=c("Unchecked","Checked")
+levels(data$op_anaes___5.factor)=c("Unchecked","Checked")
+
+levels(data$op_anaes_local___1.factor)=c("Unchecked","Checked")
+levels(data$op_anaes_local___2.factor)=c("Unchecked","Checked")
+
+levels(data$op_cvs_elements___1.factor)=c("Unchecked","Checked")
+levels(data$op_cvs_elements___2.factor)=c("Unchecked","Checked")
+levels(data$op_cvs_elements___3.factor)=c("Unchecked","Checked")
+levels(data$op_cvs_elements___4.factor)=c("Unchecked","Checked")
+
+levels(data$op_img___1.factor)=c("Unchecked","Checked")
+levels(data$op_img___2.factor)=c("Unchecked","Checked")
+levels(data$op_img___3.factor)=c("Unchecked","Checked")
+levels(data$op_img___4.factor)=c("Unchecked","Checked")
+levels(data$op_img___5.factor)=c("Unchecked","Checked")
+
+levels(data$op_comp___1.factor)=c("Unchecked","Checked")
+levels(data$op_comp___2.factor)=c("Unchecked","Checked")
+levels(data$op_comp___3.factor)=c("Unchecked","Checked")
+levels(data$op_comp___4.factor)=c("Unchecked","Checked")
+levels(data$op_comp___5.factor)=c("Unchecked","Checked")
+levels(data$op_comp___6.factor)=c("Unchecked","Checked")
+
+levels(data$postop30_reimg_type___1.factor)=c("Unchecked","Checked")
+levels(data$postop30_reimg_type___2.factor)=c("Unchecked","Checked")
+levels(data$postop30_reimg_type___3.factor)=c("Unchecked","Checked")
+levels(data$postop30_reimg_type___4.factor)=c("Unchecked","Checked")
+
+levels(data$bdi_img___1.factor)=c("Unchecked","Checked")
+levels(data$bdi_img___2.factor)=c("Unchecked","Checked")
+levels(data$bdi_img___3.factor)=c("Unchecked","Checked")
+levels(data$bdi_img___4.factor)=c("Unchecked","Checked")
+levels(data$bdi_img___5.factor)=c("Unchecked","Checked")
+levels(data$bdi_img___6.factor)=c("Unchecked","Checked")
+levels(data$bdi_img___7.factor)=c("Unchecked","Checked")
+levels(data$bdi_img___8.factor)=c("Unchecked","Checked")
+levels(data$bdi_img___9.factor)=c("Unchecked","Checked")
+
+levels(data$bdi_mx___1.factor)=c("Unchecked","Checked")
+levels(data$bdi_mx___2.factor)=c("Unchecked","Checked")
+levels(data$bdi_mx___3.factor)=c("Unchecked","Checked")
+levels(data$bdi_mx___4.factor)=c("Unchecked","Checked")
+levels(data$bdi_mx___5.factor)=c("Unchecked","Checked")
+
+levels(data$bdi_repair_comp___1.factor)=c("Unchecked","Checked")
+levels(data$bdi_repair_comp___2.factor)=c("Unchecked","Checked")
+levels(data$bdi_repair_comp___3.factor)=c("Unchecked","Checked")
+levels(data$bdi_repair_comp___4.factor)=c("Unchecked","Checked")
+levels(data$bdi_repair_comp___5.factor)=c("Unchecked","Checked")
+levels(data$bdi_repair_comp___6.factor)=c("Unchecked","Checked")
+
+levels(data$hist_staging___1.factor)=c("Unchecked","Checked")
+levels(data$hist_staging___2.factor)=c("Unchecked","Checked")
+levels(data$hist_staging___3.factor)=c("Unchecked","Checked")
+levels(data$hist_staging___4.factor)=c("Unchecked","Checked")
+
+levels(data$hist_adjv___1.factor)=c("Unchecked","Checked")
+levels(data$hist_adjv___2.factor)=c("Unchecked","Checked")
+levels(data$hist_adjv___3.factor)=c("Unchecked","Checked")
+
+levels(data$hist_rev_surg_type___1.factor)=c("Unchecked","Checked")
+levels(data$hist_rev_surg_type___2.factor)=c("Unchecked","Checked")
+levels(data$hist_rev_surg_type___3.factor)=c("Unchecked","Checked")
+
+# Removing curly brackets and HTML tags ----
 data = data %>% 
   # remove subvariable labels (in {var})
   mutate(across(where(is_character), ~str_remove_all(., " \\s*\\{[^\\)]+\\}"))) %>% 
   # remove HTML tags
   mutate(across(where(is_character), ~str_remove_all(., "<b>|</b>")))
 
-#Setting Labels
+# Setting Labels ----
 
 data$record_id %<>% ff_label("Record ID")
 data$redcap_data_access_group %<>% ff_label("Data Access Group")
@@ -225,7 +422,6 @@ data$gender %<>% ff_label("Sex at birth")
 data$asa %<>% ff_label("ASA grade (ASA grade descriptions found here)")
 data$bmi %<>% ff_label("Body Mass Index (BMI)")
 data$frailty %<>% ff_label("Clinical Frailty Scale")
-data$pt_comorbid %<>% ff_label("Comorbidities Tick all that apply")
 data$pt_comorbid_dm %<>% ff_label("Diabetes")
 data$pt_comorbid_tumour %<>% ff_label("Solid Tumour")
 data$pt_comorbid_liver %<>% ff_label("Liver disease")
@@ -368,3 +564,99 @@ data$hist_recur_day %<>% ff_label("Time from surgery to recurrence")
 data$histology_data_fields_complete %<>% ff_label("Complete?")
 data$inclusion_exclusion %<>% ff_label("Should this record be included in the analysis?")
 data$include_or_exclude_record_complete %<>% ff_label("Complete?")
+
+# labelling checkbox variables ----
+label(data$pt_comorbid___1)=" Comorbidities Tick all that apply (choice=Myocardial Infraction (MI))"
+label(data$pt_comorbid___2)=" Comorbidities Tick all that apply (choice=Congestive Heart Failure (CHF))"
+label(data$pt_comorbid___3)=" Comorbidities Tick all that apply (choice=Peripheral Vascular Disease (PVD))"
+label(data$pt_comorbid___4)=" Comorbidities Tick all that apply (choice=Cerebrovascular Accident (CVA) or Transient Ischaemic Attack (TIA))"
+label(data$pt_comorbid___5)=" Comorbidities Tick all that apply (choice=Dementia)"
+label(data$pt_comorbid___6)=" Comorbidities Tick all that apply (choice=Chronic Obstructive Pulmonary Disease (COPD))"
+label(data$pt_comorbid___7)=" Comorbidities Tick all that apply (choice=Connective Tissue Disease (CTD))"
+label(data$pt_comorbid___8)=" Comorbidities Tick all that apply (choice=Peptic Ulcer Disease (PUD))"
+label(data$pt_comorbid___9)=" Comorbidities Tick all that apply (choice=Hemiplegia)"
+label(data$pt_comorbid___10)=" Comorbidities Tick all that apply (choice=Leukaemia)"
+label(data$pt_comorbid___11)=" Comorbidities Tick all that apply (choice=Lymphoma)"
+label(data$pt_comorbid___12)=" Comorbidities Tick all that apply (choice=HIV/AIDS)"
+label(data$pt_comorbid___13)=" Comorbidities Tick all that apply (choice=Hypertension)"
+label(data$pt_comorbid___14)=" Comorbidities Tick all that apply (choice=Inflammatory Bowel Disease (IBD))"
+label(data$pt_comorbid___15)=" Comorbidities Tick all that apply (choice=Diabetes Mellitus {pt_comorbid_dm})"
+label(data$pt_comorbid___16)=" Comorbidities Tick all that apply (choice=Solid Tumour {pt_comorbid_tumour})"
+label(data$pt_comorbid___17)=" Comorbidities Tick all that apply (choice=Liver Disease {pt_comorbid_liver})"
+label(data$pt_comorbid___18)=" Comorbidities Tick all that apply (choice=Chronic Kidney Disease (CKD) {pt_comorbid_ckd})"
+label(data$pt_comorbid___19)=" Comorbidities Tick all that apply (choice=None of the Above)"
+
+label(data$pre_img_finding___1)=" Preoperative imaging findings (choice=Gallstones)"
+label(data$pre_img_finding___2)=" Preoperative imaging findings (choice=Thick-walled Gallbladder)"
+label(data$pre_img_finding___3)=" Preoperative imaging findings (choice=Pericholecystic fluid)"
+label(data$pre_img_finding___4)=" Preoperative imaging findings (choice=CBD stones)"
+label(data$pre_img_finding___5)=" Preoperative imaging findings (choice=Dilated CBD {pre_img_finding_cbd})"
+label(data$pre_img_finding___6)=" Preoperative imaging findings (choice=Polyp(s))"
+
+label(data$op_anaes___1)="Mode of anaesthesiaThis refers to the anaesthetic used during the operation and NOT as induction agents (Tick all that apply) (choice=Local {op_anaes_local})"
+label(data$op_anaes___2)="Mode of anaesthesiaThis refers to the anaesthetic used during the operation and NOT as induction agents (Tick all that apply) (choice=Regional {op_anaes_regional})"
+label(data$op_anaes___3)="Mode of anaesthesiaThis refers to the anaesthetic used during the operation and NOT as induction agents (Tick all that apply) (choice=Sedation (e.g., midazolam))"
+label(data$op_anaes___4)="Mode of anaesthesiaThis refers to the anaesthetic used during the operation and NOT as induction agents (Tick all that apply) (choice=General Inhaled {op_anaes_inhaled})"
+label(data$op_anaes___5)="Mode of anaesthesiaThis refers to the anaesthetic used during the operation and NOT as induction agents (Tick all that apply) (choice=Total Intravenous Volatile Anaesthetic (TIVA))"
+
+label(data$op_anaes_local___1)="Local anaesthesia (choice=Subcutaneous)"
+label(data$op_anaes_local___2)="Local anaesthesia (choice=Intraperitoneal)"
+
+label(data$op_cvs_elements___1)=" What elements of the Critical View of Safety (CVS) was achieved?  (choice=Clearing fat and fibrous tissue from the hepatocystic triangle)"
+label(data$op_cvs_elements___2)=" What elements of the Critical View of Safety (CVS) was achieved?  (choice=The lower third of the gallbladder being cleared from the cystic plate)"
+label(data$op_cvs_elements___3)=" What elements of the Critical View of Safety (CVS) was achieved?  (choice=Only two structures are attached to the gallbladder)"
+label(data$op_cvs_elements___4)=" What elements of the Critical View of Safety (CVS) was achieved?  (choice=None of the above)"
+
+label(data$op_img___1)=" Intraoperative CBD Assessment  (choice=Intraoperative cholangiogram (IOC))"
+label(data$op_img___2)=" Intraoperative CBD Assessment  (choice=Incisionless fluorescent cholangiography)"
+label(data$op_img___3)=" Intraoperative CBD Assessment  (choice=Laparoscopic ultrasound)"
+label(data$op_img___4)=" Intraoperative CBD Assessment  (choice=Intraoperative ERCP)"
+label(data$op_img___5)=" Intraoperative CBD Assessment  (choice=None of the above)"
+
+label(data$op_comp___1)=" Intraoperative complications - excluding bile duct injury (BDI)  (Please go to section 4 (BDI data fields) for BDI-related data entry) (choice=Bile spilt)"
+label(data$op_comp___2)=" Intraoperative complications - excluding bile duct injury (BDI)  (Please go to section 4 (BDI data fields) for BDI-related data entry) (choice=Stones Spilt)"
+label(data$op_comp___3)=" Intraoperative complications - excluding bile duct injury (BDI)  (Please go to section 4 (BDI data fields) for BDI-related data entry) (choice=Bleeding)"
+label(data$op_comp___4)=" Intraoperative complications - excluding bile duct injury (BDI)  (Please go to section 4 (BDI data fields) for BDI-related data entry) (choice=Major vascular injury)"
+label(data$op_comp___5)=" Intraoperative complications - excluding bile duct injury (BDI)  (Please go to section 4 (BDI data fields) for BDI-related data entry) (choice=Bowel injury)"
+label(data$op_comp___6)=" Intraoperative complications - excluding bile duct injury (BDI)  (Please go to section 4 (BDI data fields) for BDI-related data entry) (choice=None)"
+
+label(data$postop30_reimg_type___1)="Re-imaging type (choice=USS)"
+label(data$postop30_reimg_type___2)="Re-imaging type (choice=CT)"
+label(data$postop30_reimg_type___3)="Re-imaging type (choice=MRI)"
+label(data$postop30_reimg_type___4)="Re-imaging type (choice=ERCP)"
+
+label(data$bdi_img___1)="Imaging modality to investigate and confirm BDITick all that apply (choice=On-table cholangiography (OTC))"
+label(data$bdi_img___2)="Imaging modality to investigate and confirm BDITick all that apply (choice=USS)"
+label(data$bdi_img___3)="Imaging modality to investigate and confirm BDITick all that apply (choice=MRCP)"
+label(data$bdi_img___4)="Imaging modality to investigate and confirm BDITick all that apply (choice=CT)"
+label(data$bdi_img___5)="Imaging modality to investigate and confirm BDITick all that apply (choice=ERCP)"
+label(data$bdi_img___6)="Imaging modality to investigate and confirm BDITick all that apply (choice=Percutaneous transhepatic cholangiography (PTC))"
+label(data$bdi_img___7)="Imaging modality to investigate and confirm BDITick all that apply (choice=Nuclear medicine scan (e.g., Functional liver scan))"
+label(data$bdi_img___8)="Imaging modality to investigate and confirm BDITick all that apply (choice=Tubogram)"
+label(data$bdi_img___9)="Imaging modality to investigate and confirm BDITick all that apply (choice=None)"
+
+label(data$bdi_mx___1)="Management of Bile duct injuryTick all that apply (choice=ERCP only)"
+label(data$bdi_mx___2)="Management of Bile duct injuryTick all that apply (choice=ERCP and stent)"
+label(data$bdi_mx___3)="Management of Bile duct injuryTick all that apply (choice=PTC)"
+label(data$bdi_mx___4)="Management of Bile duct injuryTick all that apply (choice=Washout only)"
+label(data$bdi_mx___5)="Management of Bile duct injuryTick all that apply (choice=Surgical repair)"
+
+label(data$bdi_repair_comp___1)="One-year complications post BDI surgical repairTick all that apply (choice=Stricture formation)"
+label(data$bdi_repair_comp___2)="One-year complications post BDI surgical repairTick all that apply (choice=Cholangitis)"
+label(data$bdi_repair_comp___3)="One-year complications post BDI surgical repairTick all that apply (choice=Anastomotic leakage)"
+label(data$bdi_repair_comp___4)="One-year complications post BDI surgical repairTick all that apply (choice=Intra-abdominal abscess or biloma)"
+label(data$bdi_repair_comp___5)="One-year complications post BDI surgical repairTick all that apply (choice=Re-repair)"
+label(data$bdi_repair_comp___6)="One-year complications post BDI surgical repairTick all that apply (choice=None)"
+
+label(data$hist_staging___1)="Staging investigations after index cholecystectomyTick all that apply (choice=CT thorax abdomen pelvis)"
+label(data$hist_staging___2)="Staging investigations after index cholecystectomyTick all that apply (choice=MRI liver)"
+label(data$hist_staging___3)="Staging investigations after index cholecystectomyTick all that apply (choice=PET-CT)"
+label(data$hist_staging___4)="Staging investigations after index cholecystectomyTick all that apply (choice=Staging laparoscopy)"
+
+label(data$hist_adjv___1)="Adjuvant treatmentTick all that apply (choice=Chemotherapy)"
+label(data$hist_adjv___2)="Adjuvant treatmentTick all that apply (choice=Radiotherapy)"
+label(data$hist_adjv___3)="Adjuvant treatmentTick all that apply (choice=None)"
+
+label(data$hist_rev_surg_type___1)="Revisional surgery typeTick all that apply (choice=Liver resection {hist_rev_surg_type_liv})"
+label(data$hist_rev_surg_type___2)="Revisional surgery typeTick all that apply (choice=Bile duct resection)"
+label(data$hist_rev_surg_type___3)="Revisional surgery typeTick all that apply (choice=Lymph node dissection)"
