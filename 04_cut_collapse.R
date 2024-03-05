@@ -1,6 +1,6 @@
 labels_keep = extract_variable_label(patient_data_orig)
 
-patient_data = patient_data_orig %>% 
+patient_data = patient_data %>% 
   #select(-redcap_data_access_group) %>% 
   mutate(ALL = factor("ALL"), .after = 1) %>% 
   mutate(
