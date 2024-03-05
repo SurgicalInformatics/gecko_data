@@ -25,5 +25,5 @@ patient_data_orig = data %>%
                       "Period less than 90% complete" = "2",
                       "Period missing - excluded from analysis" = "3"))
 
-#save(patient_data_orig, file = "patient_data_orig.rda")
+save(patient_data_orig, file = "patient_data_orig.rda")
 rm(data)

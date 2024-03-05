@@ -416,7 +416,6 @@ data$record_id %<>% ff_label("Record ID")
 data$redcap_data_access_group %<>% ff_label("Data Access Group")
 data$time_entered %<>% ff_label("Time")
 data$user_start %<>% ff_label("User started the form")
-data$intro_text %<>% ff_label("IMPORTANT NOTE")
 data$period %<>% ff_label("Data collection period")
 data$age_years %<>% ff_label("Age")
 data$gender %<>% ff_label("Sex at birth")
@@ -435,7 +434,7 @@ data$pre_img_mrcp %<>% ff_label("Magnetic Resonance Cholangiopancreatography (MR
 data$pre_img_ercp %<>% ff_label("Endoscopic Retrograde Cholangiopancreatography (ERCP)")
 data$pre_img_eus %<>% ff_label("Endoscopic Ultrasound (EUS)")
 data$pre_img_hida %<>% ff_label("Hepatobiliary IminoDiacetic Acid (HIDA)")
-data$pre_img_finding %<>% ff_label("Preoperative imaging findings")
+#data$pre_img_finding %<>% ff_label("Preoperative imaging findings")
 data$pre_img_finding_cbd %<>% ff_label("Dilated CBD diameter")
 data$pre_symp_adm_day %<>% ff_label("Days between first biliary symptom onset and diagnosis")
 data$pre_symp_adm_months %<>% ff_label("months symptom to diagnosis")
@@ -452,8 +451,8 @@ data$pre_indication_atlanta %<>% ff_label("Atlanta criteria")
 data$pre_indication_atlanta_doc %<>% ff_label("Was the Atlanta criteria documented in patient notes?")
 data$missing_total_pre %<>% ff_label("Total number of missing key data fields in the pre-operative form")
 data$preop_data_fields_complete %<>% ff_label("Complete?")
-data$op_anaes %<>% ff_label("Mode of anaesthesia")
-data$op_anaes_local %<>% ff_label("Local anaesthesia")
+#data$op_anaes %<>% ff_label("Mode of anaesthesia")
+#data$op_anaes_local %<>% ff_label("Local anaesthesia")
 data$op_anaes_regional %<>% ff_label("Regional anaesthesia")
 data$op_anaes_inhaled %<>% ff_label("General inhaled anaesthesia")
 data$op_abx_yn %<>% ff_label("Intraoperative antibiotics")
@@ -472,7 +471,7 @@ data$op_approach_mis_gas %<>% ff_label("Gassless laparoscopic or robotic techniq
 data$op_approach_mis_reuse %<>% ff_label("Reusable laparoscopic equipment")
 data$op_nassar %<>% ff_label("Nassar grade")
 data$op_cvs_yn %<>% ff_label("Critical View of Safety (CVS)")
-data$op_cvs_elements %<>% ff_label("Elements of the Critical View of Safety (CVS) achieved")
+#data$op_cvs_elements %<>% ff_label("Elements of the Critical View of Safety (CVS) achieved")
 data$op_cvs_to %<>% ff_label("Was there a time-out to verify CVS")
 data$op_performed %<>% ff_label("Operation performed")
 data$op_performed_tcs %<>% ff_label("Total cholecystectomy technique")
@@ -480,7 +479,7 @@ data$op_performed_stc %<>% ff_label("Subtotal cholecystectomy technique")
 data$op_performed_no %<>% ff_label("Operation not performed")
 data$op_drain_yn %<>% ff_label("Abdominal drain insertion")
 data$op_biliary_var %<>% ff_label("Anatomical Biliary variant")
-data$op_img %<>% ff_label("Intraoperative CBD Assessment")
+#data$op_img %<>% ff_label("Intraoperative CBD Assessment")
 data$op_img_desc %<>% ff_label("Decision for intraoperative CBD Assessment")
 data$op_img_desc_select %<>% ff_label("Reason for selective decision of intraoperative CBD Assessment")
 data$op_img_stone_yn %<>% ff_label("Intraoperative CBD assessment findings")
@@ -488,7 +487,7 @@ data$op_img_stone_mx %<>% ff_label("Intraoperative CBD stone management")
 data$op_cbd_explore %<>% ff_label("Common Bile Duct exploration")
 data$op_cbd_explore_close %<>% ff_label("Choledochotomy closure")
 data$op_contam %<>% ff_label("Operative contamination")
-data$op_comp %<>% ff_label("Intraoperative complications")
+#data$op_comp %<>% ff_label("Intraoperative complications")
 data$op_reuse_gown %<>% ff_label("Reusable gowns")
 data$op_reuse_gown_usage %<>% ff_label("Reusable gowns usage")
 data$op_reuse_drape %<>% ff_label("Reusable drapes")
@@ -501,7 +500,7 @@ data$op_cd_death %<>% ff_label("Time from index cholecystectomy to death")
 data$postop30_cc_yn %<>% ff_label("Unplanned critical care admission")
 data$post30_cc_los %<>% ff_label("Critical care length of stay")
 data$postop30_reimg %<>% ff_label("Unplanned re-imaging")
-data$postop30_reimg_type %<>% ff_label("Re-imaging type")
+#data$postop30_reimg_type %<>% ff_label("Re-imaging type")
 data$postop30_comp_ssi %<>% ff_label("Surgical site infection")
 data$postop30_comp_ppc %<>% ff_label("Postoperative pulmonary complications")
 data$postop30_comp_leak %<>% ff_label("Bile leak")
@@ -519,11 +518,11 @@ data$bdi_day %<>% ff_label("Days from index cholecystectomy to BDI diagnosis")
 data$bdi_strasberg %<>% ff_label("Strasberg BDI grade")
 data$bdi_concvasc %<>% ff_label("Concomitant vascular injury")
 data$bdi_concvasc_loc %<>% ff_label("Concomitant vascular injury location")
-data$bdi_img %<>% ff_label("Imaging modality to investigate and confirm BDI")
+#data$bdi_img %<>% ff_label("Imaging modality to investigate and confirm BDI")
 data$bdi_spec %<>% ff_label("Discussion with a specialist HPB centre")
 data$bdi_spec_day %<>% ff_label("Time from injury to referral")
 data$bdi_spec_transfer %<>% ff_label("Transferred to specialist HPB centre")
-data$bdi_mx %<>% ff_label("Management of Bile duct injuryTick all that apply")
+#data$bdi_mx %<>% ff_label("Management of Bile duct injuryTick all that apply")
 data$bdi_ercp_day %<>% ff_label("Time from index cholecystectomy to ERCP for BDI management")
 data$bdi_ercpstent_day %<>% ff_label("Time from index cholecystectomy to ERCP and stent for BDI management")
 data$bdi_ptc_day %<>% ff_label("Time from index cholecystectomy to PTC for BDI management")
@@ -532,7 +531,7 @@ data$bdi_repair_day %<>% ff_label("Time from index cholecystectomy to surgical r
 data$bdi_repair_spec %<>% ff_label("Specialty of surgeon performing BDI repair")
 data$bdi_repair_method %<>% ff_label("Method of BDI surgical repair")
 data$bdi_repair_vasc %<>% ff_label("Vascular repair")
-data$bdi_repair_comp %<>% ff_label("One-year complications post BDI surgical repairTick all that apply")
+#data$bdi_repair_comp %<>% ff_label("One-year complications post BDI surgical repairTick all that apply")
 data$bdi_repair_stric_day %<>% ff_label("Time from BDI surgical repair to stricture formation")
 data$bdi_repair_chol_day %<>% ff_label("Time from BDI surgical repair to cholangitis")
 data$bdi_repair_anas_day %<>% ff_label("Time from BDI surgical repair to anastomotic leakage")
@@ -543,7 +542,7 @@ data$hist_exam_yn %<>% ff_label("Histological specimen sent for examination")
 data$hist_ind %<>% ff_label("Indication for sending specimen for histological examination")
 data$hist_result_day %<>% ff_label("Time from index cholecystectomy to histology result")
 data$hist_result %<>% ff_label("Histology result")
-data$hist_staging %<>% ff_label("Staging investigations after index cholecystectomyTick all that apply")
+#data$hist_staging %<>% ff_label("Staging investigations after index cholecystectomyTick all that apply")
 data$hist_staging_cttap_day %<>% ff_label("Time from histology result to CT thorax abdomen pelvis staging")
 data$hist_staging_mri_day %<>% ff_label("Time from histology result to MRI liver staging")
 data$hist_staging_pet_day %<>% ff_label("Time from histology result to PET-CT staging")
@@ -552,9 +551,9 @@ data$hist_tnm_t %<>% ff_label("T category")
 data$hist_tnm_n %<>% ff_label("N category")
 data$hist_tnm_m %<>% ff_label("M category")
 data$hist_mdt %<>% ff_label("Discussed at MDT")
-data$hist_adjv %<>% ff_label("Adjuvant treatmentTick all that apply")
+#data$hist_adjv %<>% ff_label("Adjuvant treatmentTick all that apply")
 data$hist_rev_surg %<>% ff_label("Revisional surgery completed")
-data$hist_rev_surg_type %<>% ff_label("Revisional surgery typeTick all that apply")
+#data$hist_rev_surg_type %<>% ff_label("Revisional surgery typeTick all that apply")
 data$hist_rev_surg_type_liv %<>% ff_label("Liver resection extent")
 data$hist_rev_surg_day %<>% ff_label("Time from histology result to revisional surgery")
 data$hist_rev_surg_rms %<>% ff_label("Resection margin status")
@@ -567,97 +566,84 @@ data$inclusion_exclusion %<>% ff_label("Should this record be included in the an
 data$include_or_exclude_record_complete %<>% ff_label("Complete?")
 
 # labelling checkbox variables ----
-label(data$pt_comorbid___1)="Myocardial Infraction (MI)"
-label(data$pt_comorbid___2)="Congestive Heart Failure (CHF)"
-label(data$pt_comorbid___3)="Peripheral Vascular Disease (PVD)"
-label(data$pt_comorbid___4)="Cerebrovascular Accident (CVA) or Transient Ischaemic Attack (TIA)"
-label(data$pt_comorbid___5)="Dementia"
-label(data$pt_comorbid___6)="Chronic Obstructive Pulmonary Disease (COPD)"
-label(data$pt_comorbid___7)="Connective Tissue Disease (CTD)"
-label(data$pt_comorbid___8)="Peptic Ulcer Disease (PUD)"
-label(data$pt_comorbid___9)="Hemiplegia"
-label(data$pt_comorbid___10)="Leukaemia"
-label(data$pt_comorbid___11)="Lymphoma"
-label(data$pt_comorbid___12)="HIV/AIDS"
-label(data$pt_comorbid___13)="Hypertension"
-label(data$pt_comorbid___14)="Inflammatory Bowel Disease (IBD)"
-label(data$pt_comorbid___15)="Diabetes Mellitus"
-label(data$pt_comorbid___16)="Solid Tumour"
-label(data$pt_comorbid___17)="Liver Disease"
-label(data$pt_comorbid___18)="Chronic Kidney Disease (CKD)"
-label(data$pt_comorbid___19)="None of the Above)"
-
-label(data$pre_img_finding___1)="Gallstones"
-label(data$pre_img_finding___2)="Thick-walled Gallbladder"
-label(data$pre_img_finding___3)="Pericholecystic fluid"
-label(data$pre_img_finding___4)="CBD stones"
-label(data$pre_img_finding___5)="Dilated CBD"
-label(data$pre_img_finding___6)="Polyp(s"
-
-label(data$op_anaes___1)="Local"
-label(data$op_anaes___2)="Regional"
-label(data$op_anaes___3)="Sedation (e.g., midazolam)"
-label(data$op_anaes___4)="General Inhaled"
-label(data$op_anaes___5)="Total Intravenous Volatile Anaesthetic (TIVA)"
-
-label(data$op_anaes_local___1)="Subcutaneous"
-label(data$op_anaes_local___2)="Intraperitoneal"
-
-label(data$op_cvs_elements___1)="Clearing fat and fibrous tissue from the hepatocystic triangle"
-label(data$op_cvs_elements___2)="The lower third of the gallbladder being cleared from the cystic plate"
-label(data$op_cvs_elements___3)="Only two structures are attached to the gallbladder"
-label(data$op_cvs_elements___4)="None of the above"
-
-label(data$op_img___1)="Intraoperative cholangiogram (IOC)"
-label(data$op_img___2)="Incisionless fluorescent cholangiography"
-label(data$op_img___3)="Laparoscopic ultrasound"
-label(data$op_img___4)="Intraoperative ERCP"
-label(data$op_img___5)="None of the above"
-
-label(data$op_comp___1)="Bile spilt"
-label(data$op_comp___2)="Stones Spilt"
-label(data$op_comp___3)="Bleeding"
-label(data$op_comp___4)="Major vascular injury"
-label(data$op_comp___5)="Bowel injury"
-label(data$op_comp___6)="None"
-
-label(data$postop30_reimg_type___1)="USS"
-label(data$postop30_reimg_type___2)="CT"
-label(data$postop30_reimg_type___3)="MRI"
-label(data$postop30_reimg_type___4)="ERCP"
-
-label(data$bdi_img___1)="On-table cholangiography (OTC)"
-label(data$bdi_img___2)="USS"
-label(data$bdi_img___3)="MRCP"
-label(data$bdi_img___4)="CT"
-label(data$bdi_img___5)="ERCP"
-label(data$bdi_img___6)="Percutaneous transhepatic cholangiography (PTC)"
-label(data$bdi_img___7)="Nuclear medicine scan (e.g., Functional liver scan)"
-label(data$bdi_img___8)="Tubogram"
-label(data$bdi_img___9)="None"
-
-label(data$bdi_mx___1)="ERCP only"
-label(data$bdi_mx___2)="ERCP and stent"
-label(data$bdi_mx___3)="PTC"
-label(data$bdi_mx___4)="Washout only"
-label(data$bdi_mx___5)="Surgical repair"
-
-label(data$bdi_repair_comp___1)="Stricture formation"
-label(data$bdi_repair_comp___2)="Cholangitis"
-label(data$bdi_repair_comp___3)="Anastomotic leakage"
-label(data$bdi_repair_comp___4)="Intra-abdominal abscess or biloma"
-label(data$bdi_repair_comp___5)="Re-repair"
-label(data$bdi_repair_comp___6)="None"
-
-label(data$hist_staging___1)="CT thorax abdomen pelvis"
-label(data$hist_staging___2)="MRI liver"
-label(data$hist_staging___3)="PET-CT"
-label(data$hist_staging___4)="Staging laparoscopy"
-
-label(data$hist_adjv___1)="Chemotherapy"
-label(data$hist_adjv___2)="Radiotherapy"
-label(data$hist_adjv___3)="None"
-
-label(data$hist_rev_surg_type___1)="Liver resection"
-label(data$hist_rev_surg_type___2)="Bile duct resection"
-label(data$hist_rev_surg_type___3)="Lymph node dissection"
+data$pt_comorbid___1 %<>% ff_label("Myocardial Infraction (MI)")
+data$pt_comorbid___2 %<>% ff_label("Congestive Heart Failure (CHF)")
+data$pt_comorbid___3 %<>% ff_label("Peripheral Vascular Disease (PVD)")
+data$pt_comorbid___4 %<>% ff_label("Cerebrovascular Accident (CVA) or Transient Ischaemic Attack (TIA)")
+data$pt_comorbid___5 %<>% ff_label("Dementia")
+data$pt_comorbid___6 %<>% ff_label("Chronic Obstructive Pulmonary Disease (COPD)")
+data$pt_comorbid___7 %<>% ff_label("Connective Tissue Disease (CTD)")
+data$pt_comorbid___8 %<>% ff_label("Peptic Ulcer Disease (PUD)")
+data$pt_comorbid___9 %<>% ff_label("Hemiplegia")
+data$pt_comorbid___10 %<>% ff_label("Leukaemia")
+data$pt_comorbid___11 %<>% ff_label("Lymphoma")
+data$pt_comorbid___12 %<>% ff_label("HIV/AIDS")
+data$pt_comorbid___13 %<>% ff_label("Hypertension")
+data$pt_comorbid___14 %<>% ff_label("Inflammatory Bowel Disease (IBD)")
+data$pt_comorbid___15 %<>% ff_label("Diabetes Mellitus")
+data$pt_comorbid___16 %<>% ff_label("Solid Tumour")
+data$pt_comorbid___17 %<>% ff_label("Liver Disease")
+data$pt_comorbid___18 %<>% ff_label("Chronic Kidney Disease (CKD)")
+data$pt_comorbid___19 %<>% ff_label("None")
+data$pre_img_finding___1 %<>% ff_label("Gallstones")
+data$pre_img_finding___2 %<>% ff_label("Thick-walled Gallbladder")
+data$pre_img_finding___3 %<>% ff_label("Pericholecystic fluid")
+data$pre_img_finding___4 %<>% ff_label("CBD stones")
+data$pre_img_finding___5 %<>% ff_label("Dilated CBD")
+data$pre_img_finding___6 %<>% ff_label("Polyp(s)")
+data$op_anaes___1 %<>% ff_label("Local")
+data$op_anaes___2 %<>% ff_label("Regional")
+data$op_anaes___3 %<>% ff_label("Sedation (e.g., midazolam)")
+data$op_anaes___4 %<>% ff_label("General Inhaled")
+data$op_anaes___5 %<>% ff_label("Total Intravenous Volatile Anaesthetic (TIVA)")
+data$op_anaes_local___1 %<>% ff_label("Subcutaneous")
+data$op_anaes_local___2 %<>% ff_label("Intraperitoneal")
+data$op_cvs_elements___1 %<>% ff_label("Clearing fat and fibrous tissue from the hepatocystic triangle")
+data$op_cvs_elements___2 %<>% ff_label("The lower third of the gallbladder being cleared from the cystic plate")
+data$op_cvs_elements___3 %<>% ff_label("Only two structures are attached to the gallbladder")
+data$op_cvs_elements___4 %<>% ff_label("None")
+data$op_img___1 %<>% ff_label("Intraoperative cholangiogram (IOC)")
+data$op_img___2 %<>% ff_label("Incisionless fluorescent cholangiography")
+data$op_img___3 %<>% ff_label("Laparoscopic ultrasound")
+data$op_img___4 %<>% ff_label("Intraoperative ERCP")
+data$op_img___5 %<>% ff_label("None")
+data$op_comp___1 %<>% ff_label("Bile spilt")
+data$op_comp___2 %<>% ff_label("Stones Spilt")
+data$op_comp___3 %<>% ff_label("Bleeding")
+data$op_comp___4 %<>% ff_label("Major vascular injury")
+data$op_comp___5 %<>% ff_label("Bowel injury")
+data$op_comp___6 %<>% ff_label("None")
+data$postop30_reimg_type___1 %<>% ff_label("USS")
+data$postop30_reimg_type___2 %<>% ff_label("CT")
+data$postop30_reimg_type___3 %<>% ff_label("MRI")
+data$postop30_reimg_type___4 %<>% ff_label("ERCP")
+data$bdi_img___1 %<>% ff_label("On-table cholangiography (OTC)")
+data$bdi_img___2 %<>% ff_label("USS")
+data$bdi_img___3 %<>% ff_label("MRCP")
+data$bdi_img___4 %<>% ff_label("CT")
+data$bdi_img___5 %<>% ff_label("ERCP")
+data$bdi_img___6 %<>% ff_label("Percutaneous transhepatic cholangiography (PTC)")
+data$bdi_img___7 %<>% ff_label("Nuclear medicine scan (e.g., Functional liver scan)")
+data$bdi_img___8 %<>% ff_label("Tubogram")
+data$bdi_img___9 %<>% ff_label("None")
+data$bdi_mx___1 %<>% ff_label("ERCP only")
+data$bdi_mx___2 %<>% ff_label("ERCP and stent")
+data$bdi_mx___3 %<>% ff_label("PTC")
+data$bdi_mx___4 %<>% ff_label("Washout only")
+data$bdi_mx___5 %<>% ff_label("Surgical repair")
+data$bdi_repair_comp___1 %<>% ff_label("Stricture formation")
+data$bdi_repair_comp___2 %<>% ff_label("Cholangitis")
+data$bdi_repair_comp___3 %<>% ff_label("Anastomotic leakage")
+data$bdi_repair_comp___4 %<>% ff_label("Intra-abdominal abscess or biloma")
+data$bdi_repair_comp___5 %<>% ff_label("Re-repair")
+data$bdi_repair_comp___6 %<>% ff_label("None")
+data$hist_staging___1 %<>% ff_label("CT thorax abdomen pelvis")
+data$hist_staging___2 %<>% ff_label("MRI liver")
+data$hist_staging___3 %<>% ff_label("PET-CT")
+data$hist_staging___4 %<>% ff_label("Staging laparoscopy")
+data$hist_adjv___1 %<>% ff_label("Chemotherapy")
+data$hist_adjv___2 %<>% ff_label("Radiotherapy")
+data$hist_adjv___3 %<>% ff_label("None")
+data$hist_rev_surg_type___1 %<>% ff_label("Liver resection")
+data$hist_rev_surg_type___2 %<>% ff_label("Bile duct resection")
+data$hist_rev_surg_type___3 %<>% ff_label("Lymph node dissection")
