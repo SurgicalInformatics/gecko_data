@@ -1,20 +1,11 @@
----
-title: "Gecko FULL datatset into pins"
-format: 
-  html:
-    page-layout: full
-    fontsize: smaller
-editor: visual
-execute:
-  warning: false
----
+# library(tidyverse)
+# library(pins)
+# library(finalfit)
 
-# Pull data
+# Pull and clean data ----
 
-```{r}
-library(tidyverse)
-library(pins)
-library(finalfit)
+# 01_pull.R no longer actively pulls from REDCap as the project is no longer editable by collaborators
+# edit 01_pull.R if need a fresh REDCap pull
 source("01_pull.R")
 #save(patient_data_orig, file = "patient_data_orig.rda")
 #load("patient_data_orig.rda")
@@ -22,11 +13,10 @@ source("02_join_world_bank.R")
 source("03_checkbox_variable_handling.R")
 source("04_cut_collapse.R")
 source("05_cleaning.R")
-```
 
-# Selection of variables and minor modifications for the Shiny app
 
-```{r}
+# Shiny data: Selection of variables and minor modifications ----
+
 shinyviz_vars = read_lines("shinyviz_varlist.txt")
 
 appdata = patient_data %>% 
@@ -42,26 +32,11 @@ appdata = appdata %>%
   mutate(ALL = "ALL", .before = period) %>% 
   ff_relabel(labels_keep_appdata)
 
-```
-
-# Write pins
-
-```{r}
-board = board_connect()
+# Pins update ----
+board = pins::board_connect()
 # for analysis:
-board %>% pin_write(patient_data, name = "gecko_patient_data")
+board %>% pins::pin_write(patient_data, name = "gecko_patient_data")
 # for shinyviz:
-board %>% pin_write(appdata, name = "gecko_appdata")
+board %>% pins::pin_write(appdata, name = "gecko_appdata")
 
-```
-
-# Usage
-
-```{r, eval = FALSE}
-library(pins)
-board = board_connect()
-patient_data = pin_read(board, "rots/gecko_patient_data")
-date_updated = pin_meta(board, "rots/gecko_patient_data")$created
-
-patient_data = pin_read(board, "rots/gecko_appdata")
-```
+rm(appdata, board, patient_data_orig, labels_keep_appdata, shinyviz_vars)
