@@ -37,6 +37,10 @@ board = pins::board_connect()
 # for analysis:
 board %>% pins::pin_write(patient_data, name = "gecko_patient_data")
 # for shinyviz:
+<<<<<<< HEAD:00_source_all.R
 board %>% pins::pin_write(appdata, name = "gecko_appdata")
 
 rm(appdata, board, patient_data_orig, labels_keep_appdata, shinyviz_vars)
+=======
+board %>% pins::pin_write(appdata, name = "gecko_appdata")
+>>>>>>> c5c6c65f8e3455274e8ef29f495bd69e0324bda0:pins_full.qmd
