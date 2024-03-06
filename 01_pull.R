@@ -1,20 +1,23 @@
 library(tidyverse)
 
-patient_data_orig <- list("token"=Sys.getenv("gecko_data_collection_token"),
-                          content='report',
-                          action='export',
-                          format='csv',
-                          type='flat',
-                          csvDelimiter='',
-                          report_id= 534,
-                          rawOrLabel='raw',
-                          rawOrLabelHeaders='raw',
-                          exportCheckboxLabel='false',
-                          exportSurveyFields='false',
-                          exportDataAccessGroups='false',
-                          returnFormat='json') %>% 
-  httr::POST(Sys.getenv("redcap_globalsurg_uri"), body = ., encode = "form") %>% 
-  httr::content(guess_max = Inf)
+# patient_data_orig <- list("token"=Sys.getenv("gecko_data_collection_token"),
+#                           content='report',
+#                           action='export',
+#                           format='csv',
+#                           type='flat',
+#                           csvDelimiter='',
+#                           report_id= 534,
+#                           rawOrLabel='raw',
+#                           rawOrLabelHeaders='raw',
+#                           exportCheckboxLabel='false',
+#                           exportSurveyFields='false',
+#                           exportDataAccessGroups='false',
+#                           returnFormat='json') %>%
+#   httr::POST(Sys.getenv("redcap_globalsurg_uri"), body = ., encode = "form") %>%
+#   httr::content(guess_max = Inf)
+# 
+# save(patient_data_orig, file = "data_raw/gecko_redcap_pull.rda")
+load("data_raw/gecko_redcap_pull.rda")
 
 data = patient_data_orig
 source("GECKODataCollection-ArgonautDataPullRiin_R_2024-01-12_1324.r")
