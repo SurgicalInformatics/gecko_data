@@ -1,4 +1,4 @@
-labels_keep = extract_variable_label(patient_data_orig)
+labels_keep = extract_variable_label(patient_data)
 
 patient_data = patient_data %>% 
   #select(-redcap_data_access_group) %>% 
