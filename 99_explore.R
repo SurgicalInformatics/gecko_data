@@ -13,3 +13,10 @@ patient_data %>%
 patient_data %>% 
   filter(internal_check != "Pass - included in analysis") %>% 
   count(redcap_data_access_group, internal_check, sort = TRUE)
+
+
+comorb = patient_data %>% 
+  count(pt_comorbid, sort = TRUE) %>% 
+  mutate(comorb_n = if_else(pt_comorbid == "None",
+                            0,
+                            str_count(pt_comorbid, ",") + 1))

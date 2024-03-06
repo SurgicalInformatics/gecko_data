@@ -3,14 +3,13 @@ library(scales)
 theme_set(theme_bw())
 library(finalfit)
 
-#load("patient_data_orig.rda")
 labels_keep = extract_variable_label(patient_data_orig)
 
 checkbox_vars_orig = patient_data_orig %>% 
   select(record_id, contains("___"))
 
 labels_df = tibble(name = names(labels_keep),
-       label = labels_keep)
+                   label = labels_keep)
 
 checkbox_vars = checkbox_vars_orig %>% 
   pivot_longer(-record_id) %>% 
@@ -23,15 +22,48 @@ checkbox_vars = checkbox_vars_orig %>%
             values = paste(label, collapse = ", ")) %>% 
   pivot_wider(names_from = name, values_from = values)
 
+# check that record_id remains distinct (so no duplicated created in join)
 stopifnot(n_distinct(checkbox_vars$record_id) == nrow(checkbox_vars))
 
 # check that None only appears alone
-# test = checkbox_vars %>% 
-#   count(pt_comorbid, sort = TRUE) %>% 
-#   mutate(includes_none = str_detect(pt_comorbid, "None"))
+stopifnot(
+  checkbox_vars %>%
+    count(pt_comorbid, sort = TRUE) %>%
+    filter(str_detect(pt_comorbid, "None")) %>% 
+    nrow() == 1)
 
 
 
 patient_data = patient_data_orig %>% 
   select(-contains("___")) %>% 
   left_join(checkbox_vars)
+
+var_order = labels_df %>% 
+  mutate(label = if_else(str_detect(name, "___"), NA, label)) %>% 
+  separate(name, into = c("name", NA), sep = "___", fill = "right") %>% 
+  distinct()
+
+# check that we've not changed the number and names of variables in this script:
+stopifnot(all(var_order$name %in% names(patient_data)))
+stopifnot(all(names(patient_data) %in% var_order$name))
+stopifnot(nrow(var_order) == ncol(patient_data))
+
+
+patient_data = patient_data %>% 
+  select(all_of(var_order$name)) %>% 
+  mutate(pt_comorbid         %<>% ff_label("Comorbidities"),
+         pre_img_finding     %<>% ff_label("Preoperative imaging findings"),
+         op_anaes            %<>% ff_label("Mode of anaesthesia"),
+         op_anaes_local      %<>% ff_label("Local anaesthesia"),
+         op_cvs_elements     %<>% ff_label("Elements of CSV achieved"),
+         op_img              %<>% ff_label("Intraoperative CBD Assessment"),
+         op_comp             %<>% ff_label("Intraoperative complications (excl. BDI)"),
+         postop30_reimg_type %<>% ff_label("Re-imaging type"),
+         bdi_img             %<>% ff_label("Imaging modality for BDI"),
+         bdi_mx              %<>% ff_label("Management of BDI"),
+         bdi_repair_comp     %<>% ff_label("One-year complications post BDI surgical repair"),
+         hist_staging        %<>% ff_label("Staging investigations after index cholecystectomy"),
+         hist_adjv           %<>% ff_label("Adjuvant treatment"),
+         hist_rev_surg_type  %<>% ff_label("Revisional surgery type"))
+
+rm(checkbox_vars_orig, checkbox_vars, checkbox_labels, labels_df, var_order, labels_keep)
