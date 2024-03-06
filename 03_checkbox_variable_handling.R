@@ -51,20 +51,20 @@ stopifnot(nrow(var_order) == ncol(patient_data))
 
 patient_data = patient_data %>% 
   select(all_of(var_order$name)) %>% 
-  mutate(pt_comorbid         %<>% ff_label("Comorbidities"),
-         pre_img_finding     %<>% ff_label("Preoperative imaging findings"),
-         op_anaes            %<>% ff_label("Mode of anaesthesia"),
-         op_anaes_local      %<>% ff_label("Local anaesthesia"),
-         op_cvs_elements     %<>% ff_label("Elements of CSV achieved"),
-         op_img              %<>% ff_label("Intraoperative CBD Assessment"),
-         op_comp             %<>% ff_label("Intraoperative complications (excl. BDI)"),
-         postop30_reimg_type %<>% ff_label("Re-imaging type"),
-         bdi_img             %<>% ff_label("Imaging modality for BDI"),
-         bdi_mx              %<>% ff_label("Management of BDI"),
-         bdi_repair_comp     %<>% ff_label("One-year complications post BDI surgical repair"),
-         hist_staging        %<>% ff_label("Staging investigations after index cholecystectomy"),
-         hist_adjv           %<>% ff_label("Adjuvant treatment"),
-         hist_rev_surg_type  %<>% ff_label("Revisional surgery type"))
+  mutate(pt_comorbid         = ff_label(pt_comorbid        , "Comorbidities"),
+         pre_img_finding     = ff_label(pre_img_finding    , "Preoperative imaging findings"),
+         op_anaes            = ff_label(op_anaes           , "Mode of anaesthesia"),
+         op_anaes_local      = ff_label(op_anaes_local     , "Local anaesthesia"),
+         op_cvs_elements     = ff_label(op_cvs_elements    , "Elements of CSV achieved"),
+         op_img              = ff_label(op_img             , "Intraoperative CBD Assessment"),
+         op_comp             = ff_label(op_comp            , "Intraoperative complications (excl. BDI)"),
+         postop30_reimg_type = ff_label(postop30_reimg_type, "Re-imaging type"),
+         bdi_img             = ff_label(bdi_img            , "Imaging modality for BDI"),
+         bdi_mx              = ff_label(bdi_mx             , "Management of BDI"),
+         bdi_repair_comp     = ff_label(bdi_repair_comp    , "One-year complications post BDI surgical repair"),
+         hist_staging        = ff_label(hist_staging       , "Staging investigations after index cholecystectomy"),
+         hist_adjv           = ff_label(hist_adjv          , "Adjuvant treatment"),
+         hist_rev_surg_type  = ff_label(hist_rev_surg_type , "Revisional surgery type"))
 
 rm(checkbox_vars_orig, checkbox_vars, checkbox_labels, labels_df, var_order, labels_keep)
 #save(patient_data, file = "03_patient_data.rda")
