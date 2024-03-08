@@ -67,4 +67,4 @@ patient_data = patient_data %>%
          hist_rev_surg_type  = ff_label(hist_rev_surg_type , "Revisional surgery type"))
 
 rm(checkbox_vars_orig, checkbox_vars, labels_df, var_order, labels_keep)
-#save(patient_data, file = "03_patient_data.rda")
+

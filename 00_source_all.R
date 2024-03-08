@@ -7,11 +7,17 @@
 # 01_pull.R no longer actively pulls from REDCap as the project is no longer editable by collaborators
 # edit 01_pull.R if need a fresh REDCap pull
 source("01_pull.R")
-#save(patient_data_orig, file = "patient_data_orig.rda")
+#save(patient_data_orig, file = "01_pull.rda")
 #load("patient_data_orig.rda")
+
 source("02_join_world_bank.R")
+
 source("03_checkbox_variable_handling.R")
+#save(patient_data, file = "03_patient_data.rda")
+
 source("04_cut_collapse.R")
+#save(patient_data, file = "04_cut_collapse.rda")
+
 source("05_cleaning.R")
 
 
