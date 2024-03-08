@@ -6,10 +6,12 @@ asa
 bmi
 frailty
 admission_prior.groups
-pt_comorbid_dm
-pt_comorbid_tumour
-pt_comorbid_liver
-pt_comorbid_ckd
+pt_diabetes
+pt_hypertension
+pt_livdis
+pt_tumour
+pt_copd
+pt_pud
 hist_ac
 pre_symp_adm_day.groups
 pre_diag_dec_day.groups

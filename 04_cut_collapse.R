@@ -1,9 +1,23 @@
+#' ---
+#' title: "GECKO data cleaning and analysis: Cutting numeric variables, collapsing categorical variables"
+#' output:
+#'   html_document: default
+#' ---
+
+# ignore the YAML, just experimenting with knitr::spin and automated Documentation creation
+
+#+ message=FALSE, warning=FALSE
+# comment these three lines in if working on this script specifically
+# comment back out when running whole pipeline again
 # library(tidyverse)
 # library(finalfit)
 # load("03_patient_data.rda")
 
 labels_keep = extract_variable_label(patient_data)
 
+#' # Cutting numeric variables into categories
+#' This is useful for the ShinyViz app, consider using numbers
+#' with their full information in analysis and modelling
 patient_data = patient_data %>% 
   #select(-redcap_data_access_group) %>% 
   mutate(ALL = factor("ALL"), .after = 1) %>% 
@@ -22,6 +36,8 @@ patient_data = patient_data %>%
                                 comorb_n == 2 ~ "2",
                                 comorb_n > 2  ~ "3+",
                                 .default = NA) %>% 
+      factor() %>% 
+      fct_relevel("None") %>% 
       ff_label("Number of comorbidities"),
     .after = pt_comorbid) %>% 
   mutate(
@@ -101,11 +117,61 @@ patient_data = patient_data %>%
                                       TRUE ~ NA) %>%
       fct_relevel("0 days", "1-2 days", "3-7 days", "1-2 weeks", "2-4 weeks", "1-6 months", "6+ months") %>% 
       ff_label("Decision to operate vs operation (days)"),
-    .after = pre_dec_op_day) %>% 
+    .after = pre_dec_op_day)
+
+#' # Collapsing and lumping categorical variables
+
+#' Collapse the combinations of anaethesia patients had.
+#' note that this is combinations, and the Other group may still include patients who
+#' had a general anaesthetic, etc.
+patient_data = patient_data %>% 
   mutate(
     # anaesthetic type ----
     op_anaes.grouped = op_anaes %>% 
       fct_lump(9, other_level = "Other combination") %>% 
       ff_label("Anaesthetic"),
-    .after = op_anaes) %>% 
-  ff_relabel(labels_keep)
+    .after = op_anaes)
+
+#' ## Derive main comorbidities (currently all listed in a single column)
+patient_data = patient_data %>% 
+  mutate(pt_diabetes = if_else(str_detect(pt_comorbid, "Diabetes"),
+                                        "Yes",
+                                        "No") %>% 
+           factor() %>% 
+           ff_label("Diabetes"),
+         pt_hypertension = if_else(str_detect(pt_comorbid, "Hypertension"),
+                                        "Yes",
+                                        "No") %>% 
+           factor() %>% 
+           ff_label("Hypertension"),
+         pt_livdis = if_else(str_detect(pt_comorbid, "Liver Disease"),
+                                   "Yes",
+                                   "No") %>% 
+           factor() %>% 
+           ff_label("Liver Disease"),
+         pt_tumour = if_else(str_detect(pt_comorbid, "Solid Tumour"),
+                             "Yes",
+                             "No") %>% 
+           factor() %>% 
+           ff_label("Solid Tumour"),
+         pt_copd = if_else(str_detect(pt_comorbid, "COPD"),
+                             "Yes",
+                             "No") %>% 
+           factor() %>% 
+           ff_label("COPD"),
+         pt_pud = if_else(str_detect(pt_comorbid, "Peptic Ulcer Disease"),
+                             "Yes",
+                             "No") %>% 
+           factor() %>% 
+           ff_label("Peptic Ulcer Disease"),
+         .after = pt_comorbid)
+
+patient_data = patient_data %>% 
+  ff_relabel(labels_keep) %>% 
+  as_tibble()
+
+# patient_data %>%
+#   count(pt_comorbid, sort = TRUE)
+# 
+# patient_data %>% 
+#   count(str_detect(pt_comorbid, "Diabetes"))
