@@ -1,12 +1,3 @@
-#' ---
-#' title: "GECKO data cleaning and analysis: Cutting numeric variables, collapsing categorical variables"
-#' output:
-#'   html_document: default
-#' ---
-
-# ignore the YAML, just experimenting with knitr::spin and automated Documentation creation
-
-#+ message=FALSE, warning=FALSE
 # comment these three lines in if working on this script specifically
 # comment back out when running whole pipeline again
 # library(tidyverse)
