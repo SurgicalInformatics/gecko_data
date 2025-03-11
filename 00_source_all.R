@@ -62,3 +62,11 @@ rm(appdata, patient_data_orig, labels_keep_appdata, shinyviz_vars)
 #### ### ### ### ### ### #### ### ###
 
 source("06_pull_and_join_hospital_data.R")
+
+#### ### ### ### ### ### #### ### ###
+# Part III - Sivesh's code ----
+# Eligibility filtering and cleaning
+#### ### ### ### ### ### #### ### ###
+
+source("07_further_cleaning.R")
+

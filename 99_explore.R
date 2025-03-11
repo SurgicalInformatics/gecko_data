@@ -1,10 +1,17 @@
 library(tidyverse)
 library(scales)
+library(pins)
 theme_set(theme_bw())
 
-library(pins)
+
+load("data_raw/gecko_redcap_pull_2024-03-06.rda")
+patient_data_rda = patient_data_orig
+rm(patient_data_orig)
+
 board = board_connect()
-patient_data = pin_read(board, "rots/gecko_patient_data")
+patient_data_pin = pin_read(board, "rots/gecko_patient_data")
+
+
 
 patient_data_orig %>% 
   count(internal_check)

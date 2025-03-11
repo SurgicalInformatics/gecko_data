@@ -44,6 +44,7 @@ hospital_data_ss = hospital_data_ss %>%
   mutate(service_cons_n = parse_number(service_cons_n)) %>%  # note case of "100+"
   mutate(service_cons_lap_n = parse_number(service_cons_lap_n)) %>% 
   mutate(service_eme_n = parse_number(service_eme_n))
+
 df_hospital = hospital_data_ss %>% 
   rename("redcap_data_access_group_orig" = "redcap_data_access_group") %>% 
   rename("redcap_data_access_group" = "data_collection_dag") %>% 
@@ -54,8 +55,7 @@ df_hospital = hospital_data_ss %>%
 # Patient part
 
 df_patient = patient_data %>% 
-  dplyr::rename("patient_record_id" = "record_id") %>% 
-  select(-iso2, -wb)
+  dplyr::rename("patient_record_id" = "record_id")
 
 
 # Examine for duplication before joining
