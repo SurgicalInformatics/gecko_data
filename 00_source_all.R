@@ -61,3 +61,4 @@ rm(appdata, patient_data_orig, labels_keep_appdata, shinyviz_vars)
 # Join with hospital level data
 #### ### ### ### ### ### #### ### ###
 
+source("06_pull_and_join_hospital_data.R")

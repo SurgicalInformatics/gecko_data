@@ -8,7 +8,7 @@ labels_keep = extract_variable_label(patient_data)
 
 # check for duplicates ----
 # haven't removed them yet, just exploring/deciding how and where best to
-duplicated = patient_data %>% 
+duplicated_patient_records = patient_data %>% 
   janitor::get_dupes(redcap_data_access_group,
                      period, age_years, gender, bmi, frailty,
                      asa, pt_comorbid, hist_ac, admission_prior,
