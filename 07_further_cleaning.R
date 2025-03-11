@@ -1,10 +1,4 @@
-# pull
-library(pins)
-library(dplyr); library(finalfit); library(stringr); library(ggplot2); library(magrittr); library(kableExtra); library(Hmisc); 
-library(tidyr); library(naniar); library(forcats); library(readxl); library(ggpubr); library(ggridges); library(binom); library(tidyverse); library(patchwork)	
-
-# load data
-setwd("~/gecko_data/data_analysis")
+# Copied from argonaut - sivesh - gecko_data shared project
 
 # get master data from pin
 board = board_connect(server = "argoshare.is.ed.ac.uk")

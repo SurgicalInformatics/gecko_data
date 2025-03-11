@@ -1,6 +1,6 @@
-# library(tidyverse)
-# library(pins)
-# library(finalfit)
+library(tidyverse)
+library(pins)
+library(finalfit)
 
 # Keeping the pins fixed in time for now as analysis has been undertaken
 update_pins = FALSE
@@ -69,4 +69,7 @@ source("06_pull_and_join_hospital_data.R")
 #### ### ### ### ### ### #### ### ###
 
 source("07_further_cleaning.R")
+
+# the duplicated tibbles should be explored and resolved.
+# rm(patient_data, joined_data, duplicated_dag_hospital, duplicated_patient_records, labels_keep, update_pins)
 
