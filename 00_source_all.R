@@ -2,6 +2,9 @@
 # library(pins)
 # library(finalfit)
 
+# Keeping the pins fixed in time for now as analysis has been undertaken
+update_pins = FALSE
+
 # Pull and clean data ----
 
 #' 01_pull.R no longer actively pulls from REDCap as the project is no longer editable by collaborators
@@ -39,10 +42,12 @@ appdata = appdata %>%
   ff_relabel(labels_keep_appdata)
 
 # Pins update ----
-board = pins::board_connect()
-# for analysis:
-board %>% pins::pin_write(patient_data, name = "gecko_patient_data")
-# for shinyviz:
-board %>% pins::pin_write(appdata, name = "gecko_appdata")
-
-rm(appdata, board, patient_data_orig, labels_keep_appdata, shinyviz_vars)
+if (update_pins){
+  board = pins::board_connect()
+  # for analysis:
+  board %>% pins::pin_write(patient_data, name = "gecko_patient_data")
+  # for shinyviz:
+  board %>% pins::pin_write(appdata, name = "gecko_appdata")
+  rm(board)
+}
+rm(appdata, patient_data_orig, labels_keep_appdata, shinyviz_vars)
