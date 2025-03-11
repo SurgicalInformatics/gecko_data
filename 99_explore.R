@@ -7,6 +7,9 @@ board = board_connect()
 patient_data = pin_read(board, "rots/gecko_patient_data")
 
 patient_data %>% 
+  count(internal_check)
+
+patient_data %>% 
   filter(internal_check != "Pass - included in analysis") %>% 
   count(gender, internal_check)
 
