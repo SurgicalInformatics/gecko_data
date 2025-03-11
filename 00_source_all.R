@@ -5,11 +5,14 @@
 # Keeping the pins fixed in time for now as analysis has been undertaken
 update_pins = FALSE
 
-# Pull and clean data ----
+#### ### ### ### ### ### #### ### ###
+# Part I - Riinu's code ----
+# Pull and clean data
+#### ### ### ### ### ### #### ### ###
 
 #' 01_pull.R no longer actively pulls from REDCap as the project is no longer editable by collaborators
 # edit 01_pull.R if need a fresh REDCap pull
-source("01_pull.R")
+source("01_pull_patient_data.R")
 #save(patient_data_orig, file = "01_pull.rda")
 #load("patient_data_orig.rda")
 
@@ -24,7 +27,7 @@ source("04_cut_collapse.R", echo = TRUE)
 source("05_cleaning.R")
 
 
-# Shiny data: Selection of variables and minor modifications ----
+# Upload pins including Shiny app data: Selection of variables and minor modifications
 
 shinyviz_vars = read_lines("shinyviz_varlist.txt")
 
@@ -41,7 +44,7 @@ appdata = appdata %>%
   mutate(ALL = "ALL", .before = period) %>% 
   ff_relabel(labels_keep_appdata)
 
-# Pins update ----
+# Pins update
 if (update_pins){
   board = pins::board_connect()
   # for analysis:
@@ -51,3 +54,10 @@ if (update_pins){
   rm(board)
 }
 rm(appdata, patient_data_orig, labels_keep_appdata, shinyviz_vars)
+
+
+#### ### ### ### ### ### #### ### ###
+# Part II - Neil's code ----
+# Join with hospital level data
+#### ### ### ### ### ### #### ### ###
+
