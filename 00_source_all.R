@@ -73,3 +73,9 @@ source("07_further_cleaning.R")
 # the duplicated tibbles should be explored and resolved.
 # rm(patient_data, joined_data, duplicated_dag_hospital, duplicated_patient_records, labels_keep, update_pins)
 
+#### ### ### ### ### ### #### ### ###
+# Part IV - Riinu's code ----
+# 1-year follow-up pull
+#### ### ### ### ### ### #### ### ###
+
+source("08_pull_1yr_fu_data.R")
