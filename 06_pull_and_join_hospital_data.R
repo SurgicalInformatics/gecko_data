@@ -33,7 +33,7 @@ hospital_data_ss = read_csv("data_raw/GECKOTeamRegistratio-SiteSurveyDataNeil_DA
 
 #apply factoring script
 data = hospital_data_ss
-source("redcap_factoring/GECKOTeamRegistratio-SiteSurveyDataNeil_R_2024-02-02_1708_edited.r")
+source("redcap_factoring/GECKOTeamRegistratio_R_2024-01-10_1423-edited.r")
 hospital_data_ss = data
 rm(data)
 
@@ -86,9 +86,9 @@ duplicated_dag_hospital = df_hospital %>%
 
 
 
-joined_data = left_join( 
+master_data = left_join( 
   df_patient,
   df_hospital %>% distinct(redcap_data_access_group, .keep_all = T)
 )
-
-rm(df_hospital, df_patient, hospital_data_ss)
+#save(joined_data, file = "06_joined_data_2025-07-18.rda")
+rm(df_hospital, df_patient, hospital_data_ss, duplicated_dag_hospital, patient_data)

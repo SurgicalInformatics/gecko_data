@@ -46,7 +46,7 @@ appdata = appdata %>%
 
 # Pins update
 if (update_pins){
-  board = pins::board_connect()
+  
   # for analysis:
   board %>% pins::pin_write(patient_data, name = "gecko_patient_data")
   # for shinyviz:
@@ -55,6 +55,10 @@ if (update_pins){
 }
 rm(appdata, patient_data_orig, labels_keep_appdata, shinyviz_vars)
 
+
+#board = pins::board_connect()
+#gecko_adult = pin_read(board, name = "siveshkk93/gecko_adult_data")
+#save(gecko_adult, file = "gecko_adult_siveshkk93_2025-07-11.rds")
 
 #### ### ### ### ### ### #### ### ###
 # Part II - Neil's code ----

@@ -1,20 +1,37 @@
 # Copied from argonaut - sivesh - gecko_data shared project
 
 # get master data from pin
-board = board_connect(server = "argoshare.is.ed.ac.uk")
-master_data = pin_read(board, "nclark/joined_data") 
+#board = board_connect(server = "argoshare.is.ed.ac.uk")
+#master_data_old = pin_read(board, "nclark/joined_data") 
+
+library(tidyverse)
+library(pins)
+
+master_data_old = pin_read(board, "nclark/joined_data") 
+master_data_old %>% 
+  count(service_type)
+
+master_data_old$service_type %>% class()
+
+master_data %>% 
+  count(internal_check)
 
 # Select Adult patients #
-gecko_adult = master_data %>% 
-  filter(age_years > 17) %>% 
+gecko_adult1 = master_data %>% 
+  filter(age_years > 17)
+
+# excluded due to age
+nrow(master_data) - nrow(gecko_adult1)
+
+gecko_adult = gecko_adult1 %>% 
   filter(internal_check == "Pass - included in analysis")
 
+# excluded due to internal check
+nrow(gecko_adult1) - nrow(gecko_adult)
 
-#gecko_adult %>% 
-#  filter(age_years > 17) %>% 
-#  select(wb, hosp_type,redcap_data_access_group_orig) %>% 
-# group_by(wb, hosp_type) %>%
-#  summarise(num_iso2 = n_distinct(redcap_data_access_group_orig), .groups = "drop")
+rm(gecko_adult1, master_data)
+
+gecko_adult$service_type
 
 # clean 
 gecko_adult = gecko_adult %>%

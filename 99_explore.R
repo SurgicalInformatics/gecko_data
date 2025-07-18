@@ -4,12 +4,31 @@ library(pins)
 theme_set(theme_bw())
 
 
+
+board = board_connect()
+gecko_adult = pin_read(board, "siveshkk93/gecko_adult_data")
+gecko_adult = tibble(gecko_adult)
+
+gecko_1yrfu  = pin_read(board, "rots/gecko_1yrfu_data")
+
+mismatches = anti_join(gecko_adult, gecko_1yrfu)
+
+stopifnot(nrow(gecko_1yrfu %>% 
+  filter(patient_record_id %in% mismatches$patient_record_id)) == 0)
+
+gecko_full = left_join(gecko_adult, gecko_1yrfu)
+
+
 load("data_raw/gecko_redcap_pull_2024-03-06.rda")
 patient_data_rda = patient_data_orig
 rm(patient_data_orig)
 
 board = board_connect()
 patient_data_pin = pin_read(board, "rots/gecko_patient_data")
+
+library(pins)
+board = board_connect()
+gecko_data = pin_read(board, "siveshkk93/gecko_adult_data")
 
 
 
